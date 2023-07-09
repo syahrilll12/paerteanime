@@ -103,7 +103,6 @@
                                     LANJUT</span><i class="fa-solid fa-chevron-right"></i></a>
                         </div>
                     </div>
-                    <p></p>
 
                 </div>
             </div>
