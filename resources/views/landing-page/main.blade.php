@@ -118,7 +118,7 @@
                         <h4 class="text-white">SEDANG TAYANG</h4>
                     </div>
                     <div class="col-md-4">
-                        <a href="" class="text-white bold ">Lihat Semua -></a>
+                        <a href="" class="text-white bold hover-red">Lihat Semua -></a>
                     </div>
                 </div>
 
@@ -143,7 +143,8 @@
                                 </a>
                             </ul>
                             <h5>
-                                <a href="" class="text-white font-weight-bold text-decoration-none ">Zom 100: Zombie
+                                <a href="" class="text-white font-weight-bold text-decoration-none hover-red">Zom
+                                    100: Zombie
                                     ni Naru made ni
                                     Shitai 100 no Koto</a>
                             </h5>
@@ -169,7 +170,7 @@
                                 </a>
                             </ul>
                             <h5>
-                                <a href="" class="text-white font-weight-bold ">Hirogaru Sky! Precure</a>
+                                <a href="" class="text-white font-weight-bold hover-red">Hirogaru Sky! Precure</a>
                             </h5>
                         </div>
                     </div>
@@ -177,7 +178,7 @@
                     <div class="card border-0  ml-3" style="width: 230px;">
                         <a href="#">
                             <img class="card-img-top rounded "
-                                src="https://cdn.myanimelist.net/images/anime/1688/132531l.jpg" alt="Card image cap">
+                                src="https://cdn.myanimelist.net/images/anime/1832/133754l.jpg" alt="Card image cap">
                         </a>
                         <div class="card-body pl-0">
                             <ul class="p-0 d-inline-block">
@@ -193,7 +194,31 @@
                                 </a>
                             </ul>
                             <h5>
-                                <a href="" class="text-white font-weight-bold ">Hirogaru Sky! Precure</a>
+                                <a href="" class="text-white font-weight-bold hover-red">Ao No Orchestra</a>
+                            </h5>
+                        </div>
+                    </div>
+
+                    <div class="card border-0  ml-3" style="width: 230px;">
+                        <a href="#">
+                            <img class="card-img-top rounded "
+                                src="https://cdn.myanimelist.net/images/anime/1748/136736l.jpg" alt="Card image cap">
+                        </a>
+                        <div class="card-body pl-0">
+                            <ul class="p-0 d-inline-block">
+                                <a href="" class="">
+                                    <span class="badge badge-secondary">
+                                        <li class="text-decoration-none list-unstyled">TV</li>
+                                    </span>
+                                </a>
+                                <a href="">
+                                    <span class="badge badge-secondary">
+                                        <li class="text-decoration-none list-unstyled">WEB-DL</li>
+                                    </span>
+                                </a>
+                            </ul>
+                            <h5>
+                                <a href="" class="text-white font-weight-bold hover-red">Dark Gathering</a>
                             </h5>
                         </div>
                     </div>
@@ -208,7 +233,7 @@
                 </div>
 
                 <div class="ml-3 pt-3 pb-4">
-                    <a href="" class="text-white bold ">Lihat Semua -></a>
+                    <a href="" class="text-white bold hover-red">Lihat Semua -></a>
                 </div>
 
                 <div class="card border-0   ml-3" style="width: 340px;">

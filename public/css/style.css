@@ -55,6 +55,10 @@ li{
     padding: 4px 15px;
     margin-right: 5px;
 }
+.carousel-genre-tag:hover{
+    color: #ffffff;
+    background: #e53637;
+}
 
 .carousel-backdrop{
     filter: brightness(50%);
@@ -378,3 +382,10 @@ li{
     background-color: #0B0C2A;
 }
 
+.card img:hover{
+    filter: brightness(50%);
+}
+
+.hover-red:hover{
+    color: #e53637 !important;
+}
