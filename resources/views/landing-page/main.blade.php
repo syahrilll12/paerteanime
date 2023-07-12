@@ -112,119 +112,718 @@
         <div class="row col-12 p-0 m-0">
 
             <div class="col-md-8 p-0">
-                <!-- On Air Section -->
-                <div class="row col-12 p-0 m-0 mb-3">
-                    <div class="col-md-8 p-0 header-theme">
-                        <h4 class="text-white">SEDANG TAYANG</h4>
+
+                <!-- On Air  -->
+                <div class="finished-show">
+
+                    4
+                    <!-- On Air Section -->
+                    <div class="row col-12 p-0 m-0 mb-3">
+                        <div class="col-md-8 p-0 header-theme">
+                            <h4 class="text-white">SEDANG TAYANG</h4>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="" class="text-white bold hover-red">Lihat Semua -></a>
+                        </div>
                     </div>
-                    <div class="col-md-4">
-                        <a href="" class="text-white bold hover-red">Lihat Semua -></a>
+
+                    <!-- On Air Content -->
+                    <div class="row">
+                        <div class="card card-size border-0 mx-3">
+                            <a href="#">
+                                <img class="card-img-top rounded "
+                                    src="https://cdn.myanimelist.net/images/anime/1384/136408l.jpg" alt="Card image cap">
+                                <div class="card-topleft-info">
+                                    Ep 2 / 13
+                                </div>
+                                <div class="card-topright-info">
+                                    <i class="fa fa-fire"></i>
+                                </div>
+                                <div class="view-comment-info">
+                                    <ul>
+                                        <li><i class="fa fa-comments"></i>?</li>
+                                        <li><i class="fa fa-eye"></i>?</li>
+                                    </ul>
+                                </div>
+                            </a>
+                            <div class="card-body pl-0">
+                                <ul class="p-0 d-inline-block">
+                                    <a href="">
+                                        <span class="badge badge-secondary">
+                                            <li class="text-decoration-none list-unstyled">TV</li>
+                                        </span>
+                                    </a>
+                                    <a href="">
+                                        <span class="badge badge-secondary">
+                                            <li class="text-decoration-none list-unstyled">WEB-DL</li>
+                                        </span>
+                                    </a>
+                                </ul>
+                                <h5>
+                                    <a href=""
+                                        class="text-white font-weight-bold text-decoration-none hover-red">Zom
+                                        100: Zombie
+                                        ni Naru made ni
+                                        Shitai 100 no Koto</a>
+                                </h5>
+                            </div>
+                        </div>
+
+                        <div class="card card-size border-0  mx-3">
+                            <a href="#">
+                                <img class="card-img-top rounded "
+                                    src="https://cdn.myanimelist.net/images/anime/1688/132531l.jpg" alt="Card image cap">
+                                <div class="card-topleft-info">
+                                    Ep 2 / 13
+                                </div>
+                                <div class="card-topright-info">
+                                    <i class="fa fa-fire"></i>
+                                </div>
+                                <div class="view-comment-info">
+                                    <ul>
+                                        <li><i class="fa fa-comments"></i>?</li>
+                                        <li><i class="fa fa-eye"></i>?</li>
+                                    </ul>
+                                </div>
+                            </a>
+                            <div class="card-body pl-0">
+                                <ul class="p-0 d-inline-block">
+                                    <a href="" class="">
+                                        <span class="badge badge-secondary">
+                                            <li class="text-decoration-none list-unstyled">TV</li>
+                                        </span>
+                                    </a>
+                                    <a href="">
+                                        <span class="badge badge-secondary">
+                                            <li class="text-decoration-none list-unstyled">WEB-DL</li>
+                                        </span>
+                                    </a>
+                                </ul>
+                                <h5>
+                                    <a href="" class="text-white font-weight-bold hover-red">Hirogaru Sky!
+                                        Precure</a>
+                                </h5>
+                            </div>
+                        </div>
+
+                        <div class="card card-size border-0  ml-3">
+                            <a href="#">
+                                <img class="card-img-top rounded "
+                                    src="https://cdn.myanimelist.net/images/anime/1832/133754l.jpg" alt="Card image cap">
+                                <div class="card-topleft-info">
+                                    Ep 2 / 13
+                                </div>
+                                <div class="card-topright-info">
+                                    <i class="fa fa-fire"></i>
+                                </div>
+                                <div class="view-comment-info">
+                                    <ul>
+                                        <li><i class="fa fa-comments"></i>?</li>
+                                        <li><i class="fa fa-eye"></i>?</li>
+                                    </ul>
+                                </div>
+                            </a>
+                            <div class="card-body pl-0">
+                                <ul class="p-0 d-inline-block">
+                                    <a href="" class="">
+                                        <span class="badge badge-secondary">
+                                            <li class="text-decoration-none list-unstyled">TV</li>
+                                        </span>
+                                    </a>
+                                    <a href="">
+                                        <span class="badge badge-secondary">
+                                            <li class="text-decoration-none list-unstyled">WEB-DL</li>
+                                        </span>
+                                    </a>
+                                </ul>
+                                <h5>
+                                    <a href="" class="text-white font-weight-bold hover-red">Ao No Orchestra</a>
+                                </h5>
+                            </div>
+                        </div>
+
+                        <div class="card card-size border-0 mx-3">
+                            <a href="#">
+                                <img class="card-img-top rounded "
+                                    src="https://cdn.myanimelist.net/images/anime/1748/136736l.jpg" alt="Card image cap">
+                                <div class="card-topleft-info">
+                                    Ep 2 / 13
+                                </div>
+                                <div class="card-topright-info">
+                                    <i class="fa fa-fire"></i>
+                                </div>
+                                <div class="view-comment-info">
+                                    <ul>
+                                        <li><i class="fa fa-comments"></i>?</li>
+                                        <li><i class="fa fa-eye"></i>?</li>
+                                    </ul>
+                                </div>
+                            </a>
+                            <div class="card-body pl-0">
+                                <ul class="p-0 d-inline-block">
+                                    <a href="" class="">
+                                        <span class="badge badge-secondary">
+                                            <li class="text-decoration-none list-unstyled">TV</li>
+                                        </span>
+                                    </a>
+                                    <a href="">
+                                        <span class="badge badge-secondary">
+                                            <li class="text-decoration-none list-unstyled">WEB-DL</li>
+                                        </span>
+                                    </a>
+                                </ul>
+                                <h5>
+                                    <a href="" class="text-white font-weight-bold hover-red">Dark Gathering</a>
+                                </h5>
+                            </div>
+                        </div>
+
+                        <div class="card card-size border-0 mx-3">
+                            <a href="#">
+                                <img class="card-img-top rounded "
+                                    src="https://cdn.myanimelist.net/images/anime/1239/134810l.jpg" alt="Card image cap">
+                                <div class="card-topleft-info">
+                                    Ep 2 / 13
+                                </div>
+                                <div class="card-topright-info">
+                                    <i class="fa fa-fire"></i>
+                                </div>
+                                <div class="view-comment-info">
+                                    <ul>
+                                        <li><i class="fa fa-comments"></i>?</li>
+                                        <li><i class="fa fa-eye"></i>?</li>
+                                    </ul>
+                                </div>
+                            </a>
+                            <div class="card-body pl-0">
+                                <ul class="p-0 d-inline-block">
+                                    <a href="" class="">
+                                        <span class="badge badge-secondary">
+                                            <li class="text-decoration-none list-unstyled">TV</li>
+                                        </span>
+                                    </a>
+                                    <a href="">
+                                        <span class="badge badge-secondary">
+                                            <li class="text-decoration-none list-unstyled">WEB-DL</li>
+                                        </span>
+                                    </a>
+                                </ul>
+                                <h5>
+                                    <a href="" class="text-white font-weight-bold hover-red">Yumemiru Danshi wa
+                                        Genjitsushugisha</a>
+                                </h5>
+                            </div>
+                        </div>
+
+                        <div class="card card-size border-0  ml-3">
+                            <a href="#">
+                                <img class="card-img-top rounded "
+                                    src="https://cdn.myanimelist.net/images/anime/1156/136693l.jpg" alt="Card image cap">
+                                <div class="card-topleft-info">
+                                    Ep 2 / 13
+                                </div>
+                                <div class="card-topright-info">
+                                    <i class="fa fa-fire"></i>
+                                </div>
+                                <div class="view-comment-info">
+                                    <ul>
+                                        <li><i class="fa fa-comments"></i>?</li>
+                                        <li><i class="fa fa-eye"></i>?</li>
+                                    </ul>
+                                </div>
+                            </a>
+                            <div class="card-body pl-0">
+                                <ul class="p-0 d-inline-block">
+                                    <a href="" class="">
+                                        <span class="badge badge-secondary">
+                                            <li class="text-decoration-none list-unstyled">TV</li>
+                                        </span>
+                                    </a>
+                                    <a href="">
+                                        <span class="badge badge-secondary">
+                                            <li class="text-decoration-none list-unstyled">WEB-DL</li>
+                                        </span>
+                                    </a>
+                                </ul>
+                                <h5>
+                                    <a href="" class="text-white font-weight-bold hover-red">BanG Dream! It's
+                                        MyGO!!!!!</a>
+                                </h5>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
-                <!-- On Air Content -->
-                <div class="row">
-                    <div class="card border-0 mx-3" style="width: 230px; height: 487px">
-                        <a href="#">
-                            <img class="card-img-top rounded "
-                                src="https://cdn.myanimelist.net/images/anime/1384/136408l.jpg" alt="Card image cap">
-                        </a>
-                        <div class="card-body pl-0">
-                            <ul class="p-0 d-inline-block">
-                                <a href="">
-                                    <span class="badge badge-secondary">
-                                        <li class="text-decoration-none list-unstyled">TV</li>
-                                    </span>
-                                </a>
-                                <a href="">
-                                    <span class="badge badge-secondary">
-                                        <li class="text-decoration-none list-unstyled">WEB-DL</li>
-                                    </span>
-                                </a>
-                            </ul>
-                            <h5>
-                                <a href="" class="text-white font-weight-bold text-decoration-none hover-red">Zom
-                                    100: Zombie
-                                    ni Naru made ni
-                                    Shitai 100 no Koto</a>
-                            </h5>
+                <!-- finished show  -->
+                <div class="finished-show mt-4">
+                    <!-- finished show Section -->
+                    <div class="row col-12 p-0 m-0 mb-3">
+                        <div class="col-md-8 p-0 header-theme">
+                            <h4 class="text-white">SELESAI TAYANG</h4>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="" class="text-white bold hover-red">Lihat Semua -></a>
                         </div>
                     </div>
 
-                    <div class="card border-0  mx-3" style="width: 230px;">
-                        <a href="#">
-                            <img class="card-img-top rounded "
-                                src="https://cdn.myanimelist.net/images/anime/1688/132531l.jpg" alt="Card image cap">
-                        </a>
-                        <div class="card-body pl-0">
-                            <ul class="p-0 d-inline-block">
-                                <a href="" class="">
-                                    <span class="badge badge-secondary">
-                                        <li class="text-decoration-none list-unstyled">TV</li>
-                                    </span>
-                                </a>
-                                <a href="">
-                                    <span class="badge badge-secondary">
-                                        <li class="text-decoration-none list-unstyled">WEB-DL</li>
-                                    </span>
-                                </a>
-                            </ul>
-                            <h5>
-                                <a href="" class="text-white font-weight-bold hover-red">Hirogaru Sky! Precure</a>
-                            </h5>
-                        </div>
-                    </div>
+                    <!-- dinished show Content -->
+                    <div class="row">
+                        <div class="card card-size border-0 mx-3">
+                            <a href="#">
+                                <img class="card-img-top rounded "
+                                    src="https://cdn.myanimelist.net/images/anime/1213/124646l.jpg" alt="Card image cap">
+                                <div class="card-topleft-info">
+                                    <i class="fa fa-star"></i>
+                                    ?
+                                </div>
 
-                    <div class="card border-0  ml-3" style="width: 230px;">
-                        <a href="#">
-                            <img class="card-img-top rounded "
-                                src="https://cdn.myanimelist.net/images/anime/1832/133754l.jpg" alt="Card image cap">
-                        </a>
-                        <div class="card-body pl-0">
-                            <ul class="p-0 d-inline-block">
-                                <a href="" class="">
-                                    <span class="badge badge-secondary">
-                                        <li class="text-decoration-none list-unstyled">TV</li>
-                                    </span>
-                                </a>
-                                <a href="">
-                                    <span class="badge badge-secondary">
-                                        <li class="text-decoration-none list-unstyled">WEB-DL</li>
-                                    </span>
-                                </a>
-                            </ul>
-                            <h5>
-                                <a href="" class="text-white font-weight-bold hover-red">Ao No Orchestra</a>
-                            </h5>
+                                <div class="view-comment-info">
+                                    <ul>
+                                        <li><i class="fa fa-comments"></i>?</li>
+                                        <li><i class="fa fa-eye"></i>?</li>
+                                    </ul>
+                                </div>
+                            </a>
+                            <div class="card-body pl-0">
+                                <ul class="p-0 d-inline-block">
+                                    <a href="">
+                                        <span class="badge badge-secondary">
+                                            <li class="text-decoration-none list-unstyled">TV</li>
+                                        </span>
+                                    </a>
+                                    <a href="">
+                                        <span class="badge badge-secondary">
+                                            <li class="text-decoration-none list-unstyled">WEB-DL</li>
+                                        </span>
+                                    </a>
+                                </ul>
+                                <h5>
+                                    <a href="" class="text-white font-weight-bold text-decoration-none hover-red">
+                                        Shuumatsu no Walküre II</a>
+                                </h5>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="card border-0  ml-3" style="width: 230px;">
-                        <a href="#">
-                            <img class="card-img-top rounded "
-                                src="https://cdn.myanimelist.net/images/anime/1748/136736l.jpg" alt="Card image cap">
-                        </a>
-                        <div class="card-body pl-0">
-                            <ul class="p-0 d-inline-block">
-                                <a href="" class="">
-                                    <span class="badge badge-secondary">
-                                        <li class="text-decoration-none list-unstyled">TV</li>
-                                    </span>
-                                </a>
-                                <a href="">
-                                    <span class="badge badge-secondary">
-                                        <li class="text-decoration-none list-unstyled">WEB-DL</li>
-                                    </span>
-                                </a>
-                            </ul>
-                            <h5>
-                                <a href="" class="text-white font-weight-bold hover-red">Dark Gathering</a>
-                            </h5>
+                        <div class="card card-size border-0  mx-3">
+                            <a href="#">
+                                <img class="card-img-top rounded "
+                                    src="https://cdn.myanimelist.net/images/anime/1875/133377l.jpg" alt="Card image cap">
+                                <div class="card-topleft-info">
+                                    <i class="fa fa-star"></i>
+                                    ?
+                                </div>
+
+                                <div class="view-comment-info">
+                                    <ul>
+                                        <li><i class="fa fa-comments"></i>?</li>
+                                        <li><i class="fa fa-eye"></i>?</li>
+                                    </ul>
+                                </div>
+                            </a>
+                            <div class="card-body pl-0">
+                                <ul class="p-0 d-inline-block">
+                                    <a href="" class="">
+                                        <span class="badge badge-secondary">
+                                            <li class="text-decoration-none list-unstyled">TV</li>
+                                        </span>
+                                    </a>
+                                    <a href="">
+                                        <span class="badge badge-secondary">
+                                            <li class="text-decoration-none list-unstyled">WEB-DL</li>
+                                        </span>
+                                    </a>
+                                </ul>
+                                <h5>
+                                    <a href="" class="text-white font-weight-bold hover-red">The IDOLM@STER
+                                        Cinderella Girls: U149</a>
+                                </h5>
+                            </div>
                         </div>
-                    </div>
 
+                        <div class="card card-size border-0  ml-3">
+                            <a href="#">
+                                <img class="card-img-top rounded "
+                                    src="https://cdn.myanimelist.net/images/anime/1402/134007l.jpg" alt="Card image cap">
+                                <div class="card-topleft-info">
+                                    <i class="fa fa-star"></i>
+                                    ?
+                                </div>
+
+                                <div class="view-comment-info">
+                                    <ul>
+                                        <li><i class="fa fa-comments"></i>?</li>
+                                        <li><i class="fa fa-eye"></i>?</li>
+                                    </ul>
+                                </div>
+                            </a>
+                            <div class="card-body pl-0">
+                                <ul class="p-0 d-inline-block">
+                                    <a href="" class="">
+                                        <span class="badge badge-secondary">
+                                            <li class="text-decoration-none list-unstyled">TV</li>
+                                        </span>
+                                    </a>
+                                    <a href="">
+                                        <span class="badge badge-secondary">
+                                            <li class="text-decoration-none list-unstyled">WEB-DL</li>
+                                        </span>
+                                    </a>
+                                </ul>
+                                <h5>
+                                    <a href="" class="text-white font-weight-bold hover-red">Kimi wa Houkago
+                                        Insomnia</a>
+                                </h5>
+                            </div>
+                        </div>
+
+                        <div class="card card-size border-0 mx-3">
+                            <a href="#">
+                                <img class="card-img-top rounded "
+                                    src="https://cdn.myanimelist.net/images/anime/1794/135148l.jpg" alt="Card image cap">
+                                <div class="card-topleft-info">
+                                    <i class="fa fa-star"></i>
+                                    ?
+                                </div>
+
+                                <div class="view-comment-info">
+                                    <ul>
+                                        <li><i class="fa fa-comments"></i>?</li>
+                                        <li><i class="fa fa-eye"></i>?</li>
+                                    </ul>
+                                </div>
+                            </a>
+                            <div class="card-body pl-0">
+                                <ul class="p-0 d-inline-block">
+                                    <a href="" class="">
+                                        <span class="badge badge-secondary">
+                                            <li class="text-decoration-none list-unstyled">TV</li>
+                                        </span>
+                                    </a>
+                                    <a href="">
+                                        <span class="badge badge-secondary">
+                                            <li class="text-decoration-none list-unstyled">WEB-DL</li>
+                                        </span>
+                                    </a>
+                                </ul>
+                                <h5>
+                                    <a href="" class="text-white font-weight-bold hover-red">Kaminaki Sekai no
+                                        Kamisama Katsudou</a>
+                                </h5>
+                            </div>
+                        </div>
+
+                        <div class="card card-size border-0 mx-3">
+                            <a href="#">
+                                <img class="card-img-top rounded "
+                                    src="https://cdn.myanimelist.net/images/anime/1911/136921l.jpg" alt="Card image cap">
+                                <div class="card-topleft-info">
+                                    <i class="fa fa-star"></i>
+                                    ?
+                                </div>
+
+                                <div class="view-comment-info">
+                                    <ul>
+                                        <li><i class="fa fa-comments"></i>?</li>
+                                        <li><i class="fa fa-eye"></i>?</li>
+                                    </ul>
+                                </div>
+                            </a>
+                            <div class="card-body pl-0">
+                                <ul class="p-0 d-inline-block">
+                                    <a href="" class="">
+                                        <span class="badge badge-secondary">
+                                            <li class="text-decoration-none list-unstyled">TV</li>
+                                        </span>
+                                    </a>
+                                    <a href="">
+                                        <span class="badge badge-secondary">
+                                            <li class="text-decoration-none list-unstyled">WEB-DL</li>
+                                        </span>
+                                    </a>
+                                </ul>
+                                <h5>
+                                    <a href="" class="text-white font-weight-bold hover-red">Duo Xuan Shi: Qian
+                                        Qing Pian</a>
+                                </h5>
+                            </div>
+                        </div>
+
+                        <div class="card card-size border-0  ml-3">
+                            <a href="#">
+                                <img class="card-img-top rounded "
+                                    src="https://cdn.myanimelist.net/images/anime/1156/136693l.jpg" alt="Card image cap">
+                                <div class="card-topleft-info">
+                                    <i class="fa fa-star"></i>
+                                    ?
+                                </div>
+
+                                <div class="view-comment-info">
+                                    <ul>
+                                        <li><i class="fa fa-comments"></i>?</li>
+                                        <li><i class="fa fa-eye"></i>?</li>
+                                    </ul>
+                                </div>
+                            </a>
+                            <div class="card-body pl-0">
+                                <ul class="p-0 d-inline-block">
+                                    <a href="" class="">
+                                        <span class="badge badge-secondary">
+                                            <li class="text-decoration-none list-unstyled">TV</li>
+                                        </span>
+                                    </a>
+                                    <a href="">
+                                        <span class="badge badge-secondary">
+                                            <li class="text-decoration-none list-unstyled">WEB-DL</li>
+                                        </span>
+                                    </a>
+                                </ul>
+                                <h5>
+                                    <a href="" class="text-white font-weight-bold hover-red">BanG Dream! It's
+                                        MyGO!!!!!</a>
+                                </h5>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
+
+                <!-- finished show  -->
+                <div class="finished-show mt-4">
+                    <!-- finished show Section -->
+                    <div class="row col-12 p-0 m-0 mb-3">
+                        <div class="col-md-8 p-0 header-theme">
+                            <h4 class="text-white">SELESAI TAYANG</h4>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="" class="text-white bold hover-red">Lihat Semua -></a>
+                        </div>
+                    </div>
+
+                    <!-- dinished show Content -->
+                    <div class="row">
+                        <div class="card card-size border-0 mx-3">
+                            <a href="#">
+                                <img class="card-img-top rounded "
+                                    src="https://cdn.myanimelist.net/images/anime/1213/124646l.jpg" alt="Card image cap">
+                                <div class="card-topleft-info">
+                                    <i class="fa fa-star"></i>
+                                    ?
+                                </div>
+
+                                <div class="view-comment-info">
+                                    <ul>
+                                        <li><i class="fa fa-comments"></i>?</li>
+                                        <li><i class="fa fa-eye"></i>?</li>
+                                    </ul>
+                                </div>
+                            </a>
+                            <div class="card-body pl-0">
+                                <ul class="p-0 d-inline-block">
+                                    <a href="">
+                                        <span class="badge badge-secondary">
+                                            <li class="text-decoration-none list-unstyled">TV</li>
+                                        </span>
+                                    </a>
+                                    <a href="">
+                                        <span class="badge badge-secondary">
+                                            <li class="text-decoration-none list-unstyled">WEB-DL</li>
+                                        </span>
+                                    </a>
+                                </ul>
+                                <h5>
+                                    <a href="" class="text-white font-weight-bold text-decoration-none hover-red">
+                                        Shuumatsu no Walküre II</a>
+                                </h5>
+                            </div>
+                        </div>
+
+                        <div class="card card-size border-0  mx-3">
+                            <a href="#">
+                                <img class="card-img-top rounded "
+                                    src="https://cdn.myanimelist.net/images/anime/1875/133377l.jpg" alt="Card image cap">
+                                <div class="card-topleft-info">
+                                    <i class="fa fa-star"></i>
+                                    ?
+                                </div>
+
+                                <div class="view-comment-info">
+                                    <ul>
+                                        <li><i class="fa fa-comments"></i>?</li>
+                                        <li><i class="fa fa-eye"></i>?</li>
+                                    </ul>
+                                </div>
+                            </a>
+                            <div class="card-body pl-0">
+                                <ul class="p-0 d-inline-block">
+                                    <a href="" class="">
+                                        <span class="badge badge-secondary">
+                                            <li class="text-decoration-none list-unstyled">TV</li>
+                                        </span>
+                                    </a>
+                                    <a href="">
+                                        <span class="badge badge-secondary">
+                                            <li class="text-decoration-none list-unstyled">WEB-DL</li>
+                                        </span>
+                                    </a>
+                                </ul>
+                                <h5>
+                                    <a href="" class="text-white font-weight-bold hover-red">The IDOLM@STER
+                                        Cinderella Girls: U149</a>
+                                </h5>
+                            </div>
+                        </div>
+
+                        <div class="card card-size border-0  ml-3">
+                            <a href="#">
+                                <img class="card-img-top rounded "
+                                    src="https://cdn.myanimelist.net/images/anime/1402/134007l.jpg" alt="Card image cap">
+                                <div class="card-topleft-info">
+                                    <i class="fa fa-star"></i>
+                                    ?
+                                </div>
+
+                                <div class="view-comment-info">
+                                    <ul>
+                                        <li><i class="fa fa-comments"></i>?</li>
+                                        <li><i class="fa fa-eye"></i>?</li>
+                                    </ul>
+                                </div>
+                            </a>
+                            <div class="card-body pl-0">
+                                <ul class="p-0 d-inline-block">
+                                    <a href="" class="">
+                                        <span class="badge badge-secondary">
+                                            <li class="text-decoration-none list-unstyled">TV</li>
+                                        </span>
+                                    </a>
+                                    <a href="">
+                                        <span class="badge badge-secondary">
+                                            <li class="text-decoration-none list-unstyled">WEB-DL</li>
+                                        </span>
+                                    </a>
+                                </ul>
+                                <h5>
+                                    <a href="" class="text-white font-weight-bold hover-red">Kimi wa Houkago
+                                        Insomnia</a>
+                                </h5>
+                            </div>
+                        </div>
+
+                        <div class="card card-size border-0 mx-3">
+                            <a href="#">
+                                <img class="card-img-top rounded "
+                                    src="https://cdn.myanimelist.net/images/anime/1794/135148l.jpg" alt="Card image cap">
+                                <div class="card-topleft-info">
+                                    <i class="fa fa-star"></i>
+                                    ?
+                                </div>
+
+                                <div class="view-comment-info">
+                                    <ul>
+                                        <li><i class="fa fa-comments"></i>?</li>
+                                        <li><i class="fa fa-eye"></i>?</li>
+                                    </ul>
+                                </div>
+                            </a>
+                            <div class="card-body pl-0">
+                                <ul class="p-0 d-inline-block">
+                                    <a href="" class="">
+                                        <span class="badge badge-secondary">
+                                            <li class="text-decoration-none list-unstyled">TV</li>
+                                        </span>
+                                    </a>
+                                    <a href="">
+                                        <span class="badge badge-secondary">
+                                            <li class="text-decoration-none list-unstyled">WEB-DL</li>
+                                        </span>
+                                    </a>
+                                </ul>
+                                <h5>
+                                    <a href="" class="text-white font-weight-bold hover-red">Kaminaki Sekai no
+                                        Kamisama Katsudou</a>
+                                </h5>
+                            </div>
+                        </div>
+
+                        <div class="card card-size border-0 mx-3">
+                            <a href="#">
+                                <img class="card-img-top rounded "
+                                    src="https://cdn.myanimelist.net/images/anime/1911/136921l.jpg" alt="Card image cap">
+                                <div class="card-topleft-info">
+                                    <i class="fa fa-star"></i>
+                                    ?
+                                </div>
+
+                                <div class="view-comment-info">
+                                    <ul>
+                                        <li><i class="fa fa-comments"></i>?</li>
+                                        <li><i class="fa fa-eye"></i>?</li>
+                                    </ul>
+                                </div>
+                            </a>
+                            <div class="card-body pl-0">
+                                <ul class="p-0 d-inline-block">
+                                    <a href="" class="">
+                                        <span class="badge badge-secondary">
+                                            <li class="text-decoration-none list-unstyled">TV</li>
+                                        </span>
+                                    </a>
+                                    <a href="">
+                                        <span class="badge badge-secondary">
+                                            <li class="text-decoration-none list-unstyled">WEB-DL</li>
+                                        </span>
+                                    </a>
+                                </ul>
+                                <h5>
+                                    <a href="" class="text-white font-weight-bold hover-red">Duo Xuan Shi: Qian
+                                        Qing Pian</a>
+                                </h5>
+                            </div>
+                        </div>
+
+                        <div class="card card-size border-0  ml-3">
+                            <a href="#">
+                                <img class="card-img-top rounded "
+                                    src="https://cdn.myanimelist.net/images/anime/1156/136693l.jpg" alt="Card image cap">
+                                <div class="card-topleft-info">
+                                    <i class="fa fa-star"></i>
+                                    ?
+                                </div>
+
+                                <div class="view-comment-info">
+                                    <ul>
+                                        <li><i class="fa fa-comments"></i>?</li>
+                                        <li><i class="fa fa-eye"></i>?</li>
+                                    </ul>
+                                </div>
+                            </a>
+                            <div class="card-body pl-0">
+                                <ul class="p-0 d-inline-block">
+                                    <a href="" class="">
+                                        <span class="badge badge-secondary">
+                                            <li class="text-decoration-none list-unstyled">TV</li>
+                                        </span>
+                                    </a>
+                                    <a href="">
+                                        <span class="badge badge-secondary">
+                                            <li class="text-decoration-none list-unstyled">WEB-DL</li>
+                                        </span>
+                                    </a>
+                                </ul>
+                                <h5>
+                                    <a href="" class="text-white font-weight-bold hover-red">BanG Dream! It's
+                                        MyGO!!!!!</a>
+                                </h5>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
             </div>
+
 
             <div class="col-md-4">
                 <!-- Most Anime Watched -->
@@ -236,12 +835,409 @@
                     <a href="" class="text-white bold hover-red">Lihat Semua -></a>
                 </div>
 
-                <div class="card border-0   ml-3" style="width: 340px;">
-                    <img class="card-img-top rounded "
-                        src="https://media.discordapp.net/attachments/996767490476613702/1121548495598387414/ezgif.com-gif-maker.webp?width=1280&height=720"
-                        alt="Card image cap">
-                    <h6 class="text-center bg-white position-absolute col-12 p-2 font-weight-bold" style="bottom: 0px">
-                        Okashi No Tensei</h6>
+                <div class="card border-0 card-size-side  ml-3 mb-3">
+                    <a href="#">
+                        <img class="card-img-top rounded "
+                            src="https://media.discordapp.net/attachments/996767490476613702/1121548495598387414/ezgif.com-gif-maker.webp?width=1280&height=720"
+                            alt="Card image cap">
+                        <div class="card-topleft-info">
+                            <i class="fa fa-star"></i>
+                            ?
+                        </div>
+                        <h6 class="text-center bg-white position-absolute col-12 p-2 font-weight-bold text-black"
+                            style="bottom: 0px">
+                            Okashi No Tensei
+                        </h6>
+                    </a>
+                </div>
+
+                <div class="card border-0 card-size-side ml-3 mb-3">
+                    <a href="">
+                        <img class="card-img-top rounded "
+                            src="https://media.discordapp.net/attachments/996767490476613702/1121529276160802816/jujutsukaisenseason2_keyvisual-1-scaled-e1679649114274.jpg?width=1280&height=720"
+                            alt="Card image cap">
+                        <div class="card-topleft-info">
+                            <i class="fa fa-star"></i>
+                            ?
+                        </div>
+                        <h6 class="text-center bg-white position-absolute col-12 p-2 font-weight-bold text-black"
+                            style="bottom: 0px">
+                            Jujutsu Kaisen 2nd Season
+                        </h6>
+                    </a>
+                </div>
+
+                <div class="card border-0 card-size-side ml-3 mb-3">
+                    <a href="#">
+                        <img class="card-img-top rounded "
+                            src="https://media.discordapp.net/attachments/996767490476613702/1121530549358563468/ezgif.com-webp-to-jpg.jpg?width=1280&height=720"
+                            alt="Card image cap">
+                        <div class="card-topleft-info">
+                            <i class="fa fa-star"></i>
+                            ?
+                        </div>
+                        <h6 class="text-center bg-white position-absolute col-12 p-2 font-weight-bold text-black"
+                            style="bottom: 0px">
+                            Liar Liar
+                        </h6>
+                    </a>
+                </div>
+
+                <div class="card border-0 card-size-side   ml-3 mb-3 ">
+                    <a href="#">
+                        <img class="card-img-top rounded "
+                            src="https://media.discordapp.net/attachments/996767490476613702/1121528113931763843/Key-Visual-for-Am-I-Actually-the-Strongest.v1.jpg?width=1280&height=720"
+                            alt="Card image cap">
+                        <div class="card-topleft-info">
+                            <i class="fa fa-star"></i>
+                            ?
+                        </div>
+                        <h6 class="text-center bg-white position-absolute col-12 p-2 font-weight-bold text-black"
+                            style="bottom: 0px">
+                            Jitsu wa Ore, Saikyou deshita?
+                        </h6>
+                    </a>
+                </div>
+
+                <div class="card border-0 card-size-side ml-3 mb-5">
+                    <a href="">
+                        <img class="card-img-top rounded "
+                            src="https://media.discordapp.net/attachments/996767490476613702/1121549794419159081/ezgif.com-gif-maker.webp?width=1280&height=720"
+                            alt="Card image cap">
+                        <div class="card-topleft-info">
+                            <i class="fa fa-star"></i>
+                            ?
+                        </div>
+
+                        <h6 class="text-center bg-white position-absolute col-12 py-2 px-1 font-weight-bold text-black"
+                            style="bottom: 0px">
+                            Ryza no Atelier: Tokoyami no Joou to Himitsu no Kakurega
+                        </h6>
+                    </a>
+                </div>
+
+                <!-- New Comment - Episode -->
+                <div class="comment-side ml-3">
+
+                    <div class="mt-5 mb-4 p-0 header-theme">
+                        <h5 class="text-white">KOMENTAR TERBARU - EPISODE</h5>
+                    </div>
+
+                    <div>
+                        <div class="mb-4">
+
+                            <div class="comment-side-item">
+                                <a href="">
+                                    <img src="https://cdn.myanimelist.net/images/anime/1251/136232l.jpg">
+                                </a>
+                            </div>
+
+                            <div class="comment-side-item-2">
+                                <ul class="mb-2 p-0">
+                                    <a href="">
+                                        <span class="badge badge-secondary">
+                                            <li class="list-unstyled">TV</li>
+                                        </span>
+                                    </a>
+                                    <a href="">
+                                        <span class="badge badge-secondary">
+                                            <li class="list-unstyled">WEB-DL</li>
+                                        </span>
+                                    </a>
+                                </ul>
+
+                                <a href="#" class="text-white hover-red">
+                                    <h5 class="font-weight-bold">Okashi na Tensei</h5>
+                                    <span>Episode 3</span>
+                                    <span>(Dikomentari 16 jam yang lalu oleh Alphonse Elris)</span>
+                                </a>
+                            </div>
+
+                        </div>
+
+                        <div class="mb-4">
+
+                            <div class="comment-side-item">
+                                <a href="">
+                                    <img src="https://cdn.myanimelist.net/images/anime/1251/136232l.jpg">
+                                </a>
+                            </div>
+
+                            <div class="comment-side-item-2">
+                                <ul class="mb-2 p-0">
+                                    <a href="">
+                                        <span class="badge badge-secondary">
+                                            <li class="list-unstyled">TV</li>
+                                        </span>
+                                    </a>
+                                    <a href="">
+                                        <span class="badge badge-secondary">
+                                            <li class="list-unstyled">WEB-DL</li>
+                                        </span>
+                                    </a>
+                                </ul>
+
+                                <a href="#" class="text-white hover-red">
+                                    <h5 class="font-weight-bold">Okashi na Tensei</h5>
+                                    <span>Episode 3</span>
+                                    <span>(Dikomentari 16 jam yang lalu oleh Alphonse Elris)</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+
+                            <div class="comment-side-item">
+                                <a href="">
+                                    <img src="https://cdn.myanimelist.net/images/anime/1251/136232l.jpg">
+                                </a>
+                            </div>
+
+                            <div class="comment-side-item-2">
+                                <ul class="mb-2 p-0">
+                                    <a href="">
+                                        <span class="badge badge-secondary">
+                                            <li class="list-unstyled">TV</li>
+                                        </span>
+                                    </a>
+                                    <a href="">
+                                        <span class="badge badge-secondary">
+                                            <li class="list-unstyled">WEB-DL</li>
+                                        </span>
+                                    </a>
+                                </ul>
+
+                                <a href="#" class="text-white hover-red">
+                                    <h5 class="font-weight-bold">Okashi na Tensei</h5>
+                                    <span>Episode 3</span>
+                                    <span>(Dikomentari 16 jam yang lalu oleh Alphonse Elris)</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+
+                            <div class="comment-side-item">
+                                <a href="">
+                                    <img src="https://cdn.myanimelist.net/images/anime/1251/136232l.jpg">
+                                </a>
+                            </div>
+
+                            <div class="comment-side-item-2">
+                                <ul class="mb-2 p-0">
+                                    <a href="">
+                                        <span class="badge badge-secondary">
+                                            <li class="list-unstyled">TV</li>
+                                        </span>
+                                    </a>
+                                    <a href="">
+                                        <span class="badge badge-secondary">
+                                            <li class="list-unstyled">WEB-DL</li>
+                                        </span>
+                                    </a>
+                                </ul>
+
+                                <a href="#" class="text-white hover-red">
+                                    <h5 class="font-weight-bold">Okashi na Tensei</h5>
+                                    <span>Episode 3</span>
+                                    <span>(Dikomentari 16 jam yang lalu oleh Alphonse Elris)</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+
+                            <div class="comment-side-item">
+                                <a href="">
+                                    <img src="https://cdn.myanimelist.net/images/anime/1251/136232l.jpg">
+                                </a>
+                            </div>
+
+                            <div class="comment-side-item-2">
+                                <ul class="mb-2 p-0">
+                                    <a href="">
+                                        <span class="badge badge-secondary">
+                                            <li class="list-unstyled">TV</li>
+                                        </span>
+                                    </a>
+                                    <a href="">
+                                        <span class="badge badge-secondary">
+                                            <li class="list-unstyled">WEB-DL</li>
+                                        </span>
+                                    </a>
+                                </ul>
+
+                                <a href="#" class="text-white hover-red">
+                                    <h5 class="font-weight-bold">Okashi na Tensei</h5>
+                                    <span>Episode 3</span>
+                                    <span>(Dikomentari 16 jam yang lalu oleh Alphonse Elris)</span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- New Comment - Anime -->
+                <div class="comment-side ml-3">
+
+                    <div class="mt-5 mb-4 p-0 header-theme">
+                        <h5 class="text-white">KOMENTAR TERBARU - ANIME</h5>
+                    </div>
+
+                    <div>
+                        <div class="mb-4">
+
+                            <div class="comment-side-item">
+                                <a href="">
+                                    <img src="https://cdn.myanimelist.net/images/anime/1251/136232l.jpg">
+                                </a>
+                            </div>
+
+                            <div class="comment-side-item-2">
+                                <ul class="mb-2 p-0">
+                                    <a href="">
+                                        <span class="badge badge-secondary">
+                                            <li class="list-unstyled">TV</li>
+                                        </span>
+                                    </a>
+                                    <a href="">
+                                        <span class="badge badge-secondary">
+                                            <li class="list-unstyled">WEB-DL</li>
+                                        </span>
+                                    </a>
+                                </ul>
+
+                                <a href="#" class="text-white hover-red">
+                                    <h5 class="font-weight-bold">Okashi na Tensei</h5>
+                                    <span>Episode 3</span>
+                                    <span>(Dikomentari 16 jam yang lalu oleh Alphonse Elris)</span>
+                                </a>
+                            </div>
+
+                        </div>
+
+                        <div class="mb-4">
+
+                            <div class="comment-side-item">
+                                <a href="">
+                                    <img src="https://cdn.myanimelist.net/images/anime/1251/136232l.jpg">
+                                </a>
+                            </div>
+
+                            <div class="comment-side-item-2">
+                                <ul class="mb-2 p-0">
+                                    <a href="">
+                                        <span class="badge badge-secondary">
+                                            <li class="list-unstyled">TV</li>
+                                        </span>
+                                    </a>
+                                    <a href="">
+                                        <span class="badge badge-secondary">
+                                            <li class="list-unstyled">WEB-DL</li>
+                                        </span>
+                                    </a>
+                                </ul>
+
+                                <a href="#" class="text-white hover-red">
+                                    <h5 class="font-weight-bold">Okashi na Tensei</h5>
+                                    <span>Episode 3</span>
+                                    <span>(Dikomentari 16 jam yang lalu oleh Alphonse Elris)</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+
+                            <div class="comment-side-item">
+                                <a href="">
+                                    <img src="https://cdn.myanimelist.net/images/anime/1251/136232l.jpg">
+                                </a>
+                            </div>
+
+                            <div class="comment-side-item-2">
+                                <ul class="mb-2 p-0">
+                                    <a href="">
+                                        <span class="badge badge-secondary">
+                                            <li class="list-unstyled">TV</li>
+                                        </span>
+                                    </a>
+                                    <a href="">
+                                        <span class="badge badge-secondary">
+                                            <li class="list-unstyled">WEB-DL</li>
+                                        </span>
+                                    </a>
+                                </ul>
+
+                                <a href="#" class="text-white hover-red">
+                                    <h5 class="font-weight-bold">Okashi na Tensei</h5>
+                                    <span>Episode 3</span>
+                                    <span>(Dikomentari 16 jam yang lalu oleh Alphonse Elris)</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+
+                            <div class="comment-side-item">
+                                <a href="">
+                                    <img src="https://cdn.myanimelist.net/images/anime/1251/136232l.jpg">
+                                </a>
+                            </div>
+
+                            <div class="comment-side-item-2">
+                                <ul class="mb-2 p-0">
+                                    <a href="">
+                                        <span class="badge badge-secondary">
+                                            <li class="list-unstyled">TV</li>
+                                        </span>
+                                    </a>
+                                    <a href="">
+                                        <span class="badge badge-secondary">
+                                            <li class="list-unstyled">WEB-DL</li>
+                                        </span>
+                                    </a>
+                                </ul>
+
+                                <a href="#" class="text-white hover-red">
+                                    <h5 class="font-weight-bold">Okashi na Tensei</h5>
+                                    <span>Episode 3</span>
+                                    <span>(Dikomentari 16 jam yang lalu oleh Alphonse Elris)</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+
+                            <div class="comment-side-item">
+                                <a href="">
+                                    <img src="https://cdn.myanimelist.net/images/anime/1251/136232l.jpg">
+                                </a>
+                            </div>
+
+                            <div class="comment-side-item-2">
+                                <ul class="mb-2 p-0">
+                                    <a href="">
+                                        <span class="badge badge-secondary">
+                                            <li class="list-unstyled">TV</li>
+                                        </span>
+                                    </a>
+                                    <a href="">
+                                        <span class="badge badge-secondary">
+                                            <li class="list-unstyled">WEB-DL</li>
+                                        </span>
+                                    </a>
+                                </ul>
+
+                                <a href="#" class="text-white hover-red">
+                                    <h5 class="font-weight-bold">Okashi na Tensei</h5>
+                                    <span>Episode 3</span>
+                                    <span>(Dikomentari 16 jam yang lalu oleh Alphonse Elris)</span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
 
             </div>
