@@ -126,8 +126,9 @@
                             <div class="col-md-8 p-0 header-theme">
                                 <h4 class="text-white">SEDANG TAYANG</h4>
                             </div>
-                            <div class="col-md-4">
-                                <a href="" class="text-white bold hover-red">Lihat Semua -></a>
+                            <div class="col-md-4 d-flex justify-content-end align-items-center">
+                                <a href="" class="text-white hover-red primary-button ">LIHAT SEMUA <i
+                                        class="fa-solid fa-arrow-right-long"></i></a>s
                             </div>
                         </div>
 
@@ -373,8 +374,9 @@
                             <div class="col-md-8 p-0 header-theme">
                                 <h4 class="text-white">SELESAI TAYANG</h4>
                             </div>
-                            <div class="col-md-4">
-                                <a href="" class="text-white bold hover-red">Lihat Semua -></a>
+                            <div class="col-md-4 d-flex justify-content-end align-items-center">
+                                <a href="" class="text-white hover-red primary-button ">LIHAT SEMUA <i
+                                        class="fa-solid fa-arrow-right-long"></i></a>s
                             </div>
                         </div>
 
@@ -613,8 +615,9 @@
                             <div class="col-md-8 p-0 header-theme">
                                 <h4 class="text-white">FILM LAYAR LEBAR</h4>
                             </div>
-                            <div class="col-md-4">
-                                <a href="" class="text-white bold hover-red">Lihat Semua -></a>
+                            <div class="col-md-4 d-flex justify-content-end align-items-center">
+                                <a href="" class="text-white hover-red primary-button ">LIHAT SEMUA <i
+                                        class="fa-solid fa-arrow-right-long"></i></a>s
                             </div>
                         </div>
 
@@ -858,7 +861,8 @@
                     </div>
 
                     <div class="ml-3 pt-3 pb-4">
-                        <a href="" class="text-white bold hover-red">Lihat Semua -></a>
+                        <a href="" class="text-white hover-red primary-button">LIHAT SEMUA <i
+                                class="fa-solid fa-arrow-right-long"></i></a>
                     </div>
 
                     <div class="card border-0 card-size-side  ml-3 mb-3">

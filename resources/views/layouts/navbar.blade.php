@@ -11,7 +11,7 @@
         <!-- Menu Section -->
         <ul class="navigation-menu">
             <li><a href="#" class="active">Beranda</a></li>
-            <li><a href="/jadwal">Jadwal</a></li>
+            <li><a href="/schedule">Jadwal Rilis</a></li>
             <li><a href="#">Daftar Anime</a></li>
         </ul>
 

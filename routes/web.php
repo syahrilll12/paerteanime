@@ -20,4 +20,6 @@ Route::get('/', function () {
 
 Route::get('/paerteanime', [AnimeController::class, 'index'])->name('paerteanime');
 
-Route::get('/jadwal', [AnimeController::class, 'jadwal'])->name('jadwal');
+Route::get('/schedule', [AnimeController::class, 'schedule'])->name('schedule');
+
+Route::get('/modeteks', [AnimeController::class, 'modeteks'])->name('modeteks');

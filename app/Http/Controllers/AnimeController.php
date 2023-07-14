@@ -12,8 +12,13 @@ class AnimeController extends Controller
         return view('paerteanime');
     }
 
-    public function jadwal()
+    public function schedule()
     {
-        return view('jadwal');
+        return view('landing-page/schedule');
+    }
+
+    public function modeteks()
+    {
+        return view('landing-page/modeteks');
     }
 }
