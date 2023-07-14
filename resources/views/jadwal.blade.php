@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,12 +9,14 @@
     <link rel="stylesheet" href="icon/fontawesome/css/all.css">
     <title>PaerteAnime</title>
 </head>
+
 <body>
     <div class="container">
         <nav class="wrapper">
             <div class="brand">
                 <a href="https://kuramanime.xyz">
-                    <img src="https://cdn.jsdelivr.net/gh/wokesdev/3ptcXo-Bj-znHFV@242f2cac066d036bbdd298570b44a62b20ac4d1a/dist/img/logo-text.png" alt="">
+                    <img src="https://cdn.jsdelivr.net/gh/wokesdev/3ptcXo-Bj-znHFV@242f2cac066d036bbdd298570b44a62b20ac4d1a/dist/img/logo-text.png"
+                        alt="">
                 </a>
             </div>
             <ul class="navigation">
@@ -32,4 +35,5 @@
         </nav>
     </div>
 </body>
+
 </html>

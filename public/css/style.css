@@ -4,6 +4,7 @@
 
 *,html,body{
     font-family:'Mulish', sans-serif;
+    scroll-behavior: smooth;
 }
 
 body{
@@ -22,11 +23,18 @@ i{
 p{
     color: #b7b7b7;
 }
+
 a{
     text-decoration: none !important;
 }
+
 li{
     text-decoration: none;
+    list-style: none;
+}
+
+.product-content{
+    padding-bottom: 80px;
 }
 /* header Theme */
 .header-theme {
@@ -366,15 +374,63 @@ li{
 
 
 /* Costum Footer */
+
 .footer {
     position: relative;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 50px;
+    padding-top: 60px;
+    padding-bottom: 40px;
+    left: 0px;
+    right: 0px;
     background: #070720;
     color: white;
     text-align: center;
+}
+
+.footer-logo {
+    display: flex;
+
+}
+
+.footer-logo img{
+    width: 160px;
+    
+}
+
+.footer-nav ul li {
+    display: inline-block;
+    position: relative;
+    margin-right: 40px;
+}
+
+.footer-nav ul li a{
+    color: #b7b7b7;
+    font-weight: 600;
+}
+
+.footer span{
+    font-size: 26px;
+    position: relative;
+    bottom: 3px;
+    color: white;
+}
+
+.page-up {
+    position: absolute;
+    left: 50%;
+    top: -25px;
+    margin-left: -25px;
+}
+
+.page-up a {
+    display: inline-block;
+    font-size: 36px;
+    color: #ffffff;
+    height: 50px;
+    width: 50px;
+    background: #e53637;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
 }
 
 /* costum Card on air */
@@ -447,6 +503,10 @@ li{
     height: 487px;
 }
 
+.card-size img{
+    height: 325px;
+}
+
 .card-size-side{
     width: 340px;
 }
@@ -483,3 +543,9 @@ li{
 .hover-red:hover span{
     color: #e53637;
 }
+
+.hover-red:hover span i{
+    color: #e53637;
+}
+
+
