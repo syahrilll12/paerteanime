@@ -575,3 +575,40 @@ li{
     position: relative;
 }
 
+/* animelis constum */
+.d-content{
+    display: contents;
+}
+
+.text-schedule a{
+    width: 12.14%;
+    font-weight: 700;
+    font-size: 11px;
+    float: left;
+    color: #e4ab01;
+    display: block;
+    margin: 1px;
+    padding: 4px 0;
+    border: solid 1px #c2382b;
+}
+
+.text-schedule a:hover{
+   background: #c2382b;
+   color: white;
+}
+
+.text-underline{
+    text-decoration: underline !important;
+}
+
+.anime-list-link {
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-bottom: 10px;
+    margin-top: 0px;
+    font-size: 15px;
+    color: #E53637;
+    position: relative;
+}

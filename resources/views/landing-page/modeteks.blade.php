@@ -38,10 +38,10 @@
 
                 <div class="col-md-8 p-0">
 
-                    <!-- On Air  -->
+                    <!-- schedule  -->
                     <div class="finished-show">
 
-                        <!-- On Air Section -->
+                        <!-- schedule Section -->
                         <div class="row col-12 p-0 m-0 mb-3 border-bottom">
                             <div class="col-md-8 p-0 header-theme">
                                 <h4 class="text-white">JADWAL RILIS</h4>
@@ -56,7 +56,307 @@
                             </div>
 
                         </div>
+                    </div>
 
+                    <!-- animelist section -->
+                    <div class="row">
+
+                        <div class="col-lg-12 ">
+                            <div class="text-schedule text-center p-1">
+                                <a href="">Senin</a>
+                                <a href="">Selasa</a>
+                                <a href="">Rabu</a>
+                                <a href="">Kamis</a>
+                                <a href="">Jumat</a>
+                                <a href="">Sabtu</a>
+                                <a href="">Minggu</a>
+                                <a href="">Acak</a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <h5 class="text-white mt-4">
+                                <a href="#tidak-tentu" class="text-danger text-underline">#</a>
+                                Tidak Tentu
+                            </h5>
+                            <hr class="bg-white mt-2 mb-2">
+                        </div>
+
+                        <div class="col-md-6">
+                            <a href="https://kuramanime.xyz/anime/genjitsu-no-yohane-sunshine-in-the-mirror"
+                                class="anime-list-link">
+
+                                Genjitsu no Yohane: Sunshine in the Mirror
+                            </a>
+                        </div>
+
+                        {{-- Senin --}}
+                        <div class="col-lg-12">
+                            <h5 class="text-white mt-4">
+                                <a href="#tidak-tentu" class="text-danger text-underline">#</a>
+                                Senin
+                            </h5>
+                            <hr class="bg-white mt-2 mb-2">
+                        </div>
+
+                        <div class="col-md-6">
+                            <a href="https://kuramanime.xyz/anime/genjitsu-no-yohane-sunshine-in-the-mirror"
+                                class="anime-list-link">
+                                <span class="text-white d-inline-block">(01:40)</span>
+
+                                Genjitsu no Yohane:
+                            </a>
+                        </div>
+
+                        <div class="col-md-6">
+                            <a href="https://kuramanime.xyz/anime/genjitsu-no-yohane-sunshine-in-the-mirror"
+                                class="anime-list-link">
+                                <span class="text-white d-inline-block">(01:40)</span>
+
+                                Genjitsu no Yohane:
+                            </a>
+                        </div>
+
+                        <div class="col-md-6">
+                            <a href="https://kuramanime.xyz/anime/genjitsu-no-yohane-sunshine-in-the-mirror"
+                                class="anime-list-link">
+                                <span class="text-white d-inline-block">(01:40)</span>
+
+                                Genjitsu no Yohane:
+                            </a>
+                        </div>
+
+                        {{-- Selasa --}}
+                        <div class="col-lg-12">
+                            <h5 class="text-white mt-4">
+                                <a href="#tidak-tentu" class="text-danger text-underline">#</a>
+                                Selasa
+                            </h5>
+                            <hr class="bg-white mt-2 mb-2">
+                        </div>
+
+                        <div class="col-md-6">
+                            <a href="https://kuramanime.xyz/anime/genjitsu-no-yohane-sunshine-in-the-mirror"
+                                class="anime-list-link">
+                                <span class="text-white d-inline-block">(01:40)</span>
+
+                                Genjitsu no Yohane:
+                            </a>
+                        </div>
+
+                        <div class="col-md-6">
+                            <a href="https://kuramanime.xyz/anime/genjitsu-no-yohane-sunshine-in-the-mirror"
+                                class="anime-list-link">
+                                <span class="text-white d-inline-block">(01:40)</span>
+
+                                Genjitsu no Yohane:
+                            </a>
+                        </div>
+
+                        <div class="col-md-6">
+                            <a href="https://kuramanime.xyz/anime/genjitsu-no-yohane-sunshine-in-the-mirror"
+                                class="anime-list-link">
+                                <span class="text-white d-inline-block">(01:40)</span>
+
+                                Genjitsu no Yohane:
+                            </a>
+                        </div>
+
+                        {{-- Rabu --}}
+                        <div class="col-lg-12">
+                            <h5 class="text-white mt-4">
+                                <a href="#tidak-tentu" class="text-danger text-underline">#</a>
+                                Rabu
+                            </h5>
+                            <hr class="bg-white mt-2 mb-2">
+                        </div>
+
+                        <div class="col-md-6">
+                            <a href="https://kuramanime.xyz/anime/genjitsu-no-yohane-sunshine-in-the-mirror"
+                                class="anime-list-link">
+                                <span class="text-white d-inline-block">(01:40)</span>
+
+                                Genjitsu no Yohane:
+                            </a>
+                        </div>
+
+                        <div class="col-md-6">
+                            <a href="https://kuramanime.xyz/anime/genjitsu-no-yohane-sunshine-in-the-mirror"
+                                class="anime-list-link">
+                                <span class="text-white d-inline-block">(01:40)</span>
+
+                                Genjitsu no Yohane:
+                            </a>
+                        </div>
+
+                        <div class="col-md-6">
+                            <a href="https://kuramanime.xyz/anime/genjitsu-no-yohane-sunshine-in-the-mirror"
+                                class="anime-list-link">
+                                <span class="text-white d-inline-block">(01:40)</span>
+
+                                Genjitsu no Yohane:
+                            </a>
+                        </div>
+
+                        {{-- Kamis --}}
+                        <div class="col-lg-12">
+                            <h5 class="text-white mt-4">
+                                <a href="#tidak-tentu" class="text-danger text-underline">#</a>
+                                Kamis
+                            </h5>
+                            <hr class="bg-white mt-2 mb-2">
+                        </div>
+
+                        <div class="col-md-6">
+                            <a href="https://kuramanime.xyz/anime/genjitsu-no-yohane-sunshine-in-the-mirror"
+                                class="anime-list-link">
+                                <span class="text-white d-inline-block">(01:40)</span>
+
+                                Genjitsu no Yohane:
+                            </a>
+                        </div>
+
+                        <div class="col-md-6">
+                            <a href="https://kuramanime.xyz/anime/genjitsu-no-yohane-sunshine-in-the-mirror"
+                                class="anime-list-link">
+                                <span class="text-white d-inline-block">(01:40)</span>
+
+                                Genjitsu no Yohane:
+                            </a>
+                        </div>
+
+                        <div class="col-md-6">
+                            <a href="https://kuramanime.xyz/anime/genjitsu-no-yohane-sunshine-in-the-mirror"
+                                class="anime-list-link">
+                                <span class="text-white d-inline-block">(01:40)</span>
+
+                                Genjitsu no Yohane:
+                            </a>
+                        </div>
+
+                        {{-- Jumat --}}
+                        <div class="col-lg-12">
+                            <h5 class="text-white mt-4">
+                                <a href="#tidak-tentu" class="text-danger text-underline">#</a>
+                                Jumat
+                            </h5>
+                            <hr class="bg-white mt-2 mb-2">
+                        </div>
+
+                        <div class="col-md-6">
+                            <a href="https://kuramanime.xyz/anime/genjitsu-no-yohane-sunshine-in-the-mirror"
+                                class="anime-list-link">
+                                <span class="text-white d-inline-block">(01:40)</span>
+
+                                Genjitsu no Yohane:
+                            </a>
+                        </div>
+
+                        <div class="col-md-6">
+                            <a href="https://kuramanime.xyz/anime/genjitsu-no-yohane-sunshine-in-the-mirror"
+                                class="anime-list-link">
+                                <span class="text-white d-inline-block">(01:40)</span>
+
+                                Genjitsu no Yohane:
+                            </a>
+                        </div>
+
+                        <div class="col-md-6">
+                            <a href="https://kuramanime.xyz/anime/genjitsu-no-yohane-sunshine-in-the-mirror"
+                                class="anime-list-link">
+                                <span class="text-white d-inline-block">(01:40)</span>
+
+                                Genjitsu no Yohane:
+                            </a>
+                        </div>
+
+                        {{-- Sabtu --}}
+                        <div class="col-lg-12">
+                            <h5 class="text-white mt-4">
+                                <a href="#tidak-tentu" class="text-danger text-underline">#</a>
+                                Sabtu
+                            </h5>
+                            <hr class="bg-white mt-2 mb-2">
+                        </div>
+
+                        <div class="col-md-6">
+                            <a href="https://kuramanime.xyz/anime/genjitsu-no-yohane-sunshine-in-the-mirror"
+                                class="anime-list-link">
+                                <span class="text-white d-inline-block">(01:40)</span>
+
+                                Genjitsu no Yohane:
+                            </a>
+                        </div>
+
+                        <div class="col-md-6">
+                            <a href="https://kuramanime.xyz/anime/genjitsu-no-yohane-sunshine-in-the-mirror"
+                                class="anime-list-link">
+                                <span class="text-white d-inline-block">(01:40)</span>
+
+                                Genjitsu no Yohane:
+                            </a>
+                        </div>
+
+                        <div class="col-md-6">
+                            <a href="https://kuramanime.xyz/anime/genjitsu-no-yohane-sunshine-in-the-mirror"
+                                class="anime-list-link">
+                                <span class="text-white d-inline-block">(01:40)</span>
+
+                                Genjitsu no Yohane:
+                            </a>
+                        </div>
+
+                        {{-- minggu --}}
+                        <div class="col-lg-12">
+                            <h5 class="text-white mt-4">
+                                <a href="#tidak-tentu" class="text-danger text-underline">#</a>
+                                Minggu
+                            </h5>
+                            <hr class="bg-white mt-2 mb-2">
+                        </div>
+
+                        <div class="col-md-6">
+                            <a href="https://kuramanime.xyz/anime/genjitsu-no-yohane-sunshine-in-the-mirror"
+                                class="anime-list-link">
+                                <span class="text-white d-inline-block">(01:40)</span>
+
+                                Genjitsu no Yohane:
+                            </a>
+                        </div>
+
+                        <div class="col-md-6">
+                            <a href="https://kuramanime.xyz/anime/genjitsu-no-yohane-sunshine-in-the-mirror"
+                                class="anime-list-link">
+                                <span class="text-white d-inline-block">(01:40)</span>
+
+                                Genjitsu no Yohane:
+                            </a>
+                        </div>
+
+                        <div class="col-md-6">
+                            <a href="https://kuramanime.xyz/anime/genjitsu-no-yohane-sunshine-in-the-mirror"
+                                class="anime-list-link">
+                                <span class="text-white d-inline-block">(01:40)</span>
+
+                                Genjitsu no Yohane:
+                            </a>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <h5 class="text-white mt-4">
+                                <a href="#tidak-tentu" class="text-danger text-underline">#</a>
+                                Tidak Tentu
+                            </h5>
+                            <hr class="bg-white mt-2 mb-2">
+                        </div>
+
+                        <div class="col-md-6">
+                            <a href="https://kuramanime.xyz/anime/genjitsu-no-yohane-sunshine-in-the-mirror"
+                                class="anime-list-link">
+
+                                Genjitsu no Yohane: Sunshine in the Mirror
+                            </a>
+                        </div>
 
                     </div>
                     <!-- Notes section -->
