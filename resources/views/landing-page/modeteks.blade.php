@@ -358,9 +358,24 @@
                             </a>
                         </div>
 
+                        <div class="col-lg-12 ">
+                            <div class="d-flex justify-content-center">
+                                <div class="product-pagination pt-2">
+                                    <a aria-disabled="true">
+                                        <i class="fa fa-angle-left grey"></i>
+                                    </a>
+                                    <a href="" class="curent-page">1</a>
+                                    <a href="">2</a>
+                                    <a href="">
+                                        <i class="fa fa-angle-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                     <!-- Notes section -->
-                    <div class="text-white border-top">
+                    <div class="text-white border-top mt-4" >
                         <span class="text-white mt-2">Catatan:</span>
                         <p class="mt-1 text-white">• Jam yang ditampilkan pada jadwal rilis ini menggunakan zona waktu +08
                             (+08).

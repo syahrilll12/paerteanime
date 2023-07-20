@@ -612,3 +612,26 @@ li{
     color: #E53637;
     position: relative;
 }
+
+.product-pagination a {
+    display: inline-block;
+    font-size: 15px;
+    color: #b7b7b7;
+    font-weight: 600;
+    height: 50px;
+    width: 50px;
+
+    border-radius: 50%;
+    line-height: 48px;
+    text-align: center;
+    -webkit-transition: all, 0.3s;
+    -o-transition: all, 0.3s;
+    transition: all, 0.3s;
+}
+
+.grey{
+    color: gray;
+}
+.curent-page{
+    border: 1px solid #ffffff;
+}
