@@ -23,3 +23,7 @@ Route::get('/paerteanime', [AnimeController::class, 'index'])->name('paerteanime
 Route::get('/schedule', [AnimeController::class, 'schedule'])->name('schedule');
 
 Route::get('/modeteks', [AnimeController::class, 'modeteks'])->name('modeteks');
+
+Route::get('/animelist', [AnimeController::class, 'animelist'])->name('animelist');
+
+Route::get('/animelist-modeteks', [AnimeController::class, 'animelist_modeteks'])->name('animelist-modeteks');

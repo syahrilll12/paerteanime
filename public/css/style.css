@@ -592,10 +592,27 @@ li{
     border: solid 1px #c2382b;
 }
 
+.text-schedule-animelist a{
+    width: 6.68%;
+    font-weight: 700;
+    font-size: 11px;
+    float: left;
+    color: #e4ab01;
+    display: block;
+    margin: 1px;
+    padding: 4px 0;
+    border: solid 1px #c2382b;
+}
+
 .text-schedule a:hover{
    background: #c2382b;
    color: white;
 }
+
+.text-schedule-animelist a:hover{
+    background: #c2382b;
+    color: white;
+ }
 
 .text-underline{
     text-decoration: underline !important;

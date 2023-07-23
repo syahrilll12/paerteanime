@@ -21,4 +21,14 @@ class AnimeController extends Controller
     {
         return view('landing-page/modeteks');
     }
+
+    public function animelist()
+    {
+        return view('landing-page/animelist');
+    }
+    
+    public function animelist_modeteks()
+    {
+        return view('landing-page/animelist-modeteks');
+    }
 }
