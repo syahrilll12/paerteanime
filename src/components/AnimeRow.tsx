@@ -1,7 +1,7 @@
 "use client";
 
-import { motion, useMotionValue, useSpring } from "framer-motion";
-import { Play, Plus, Star } from "lucide-react";
+import { motion } from "framer-motion";
+import { Play, Star, Loader2 } from "lucide-react";
 import Link from "next/link";
 import { useRef, useEffect, useState } from "react";
 
@@ -17,6 +17,7 @@ interface AnimeCardProps {
 }
 
 export const AnimeCard = ({ anime }: AnimeCardProps) => {
+  const [imageLoading, setImageLoading] = useState(true);
   const watchUrl = anime.link 
     ? `/watch/${anime.id}?url=${encodeURIComponent(anime.link)}`
     : `/watch/${anime.id}?title=${encodeURIComponent(anime.title)}`;
@@ -26,27 +27,36 @@ export const AnimeCard = ({ anime }: AnimeCardProps) => {
       whileHover={{ y: -10 }}
       className="relative flex-none w-40 md:w-48 group select-none"
     >
-      <div className="relative aspect-[3/4.2] rounded-lg overflow-hidden mb-3 shadow-xl border border-white/5">
-          <img
-              src={anime.image}
-              alt={anime.title}
-              referrerPolicy="no-referrer"
-              draggable={false}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-          />
+      <div className="relative aspect-[3/4.2] rounded-lg overflow-hidden mb-3 shadow-xl border border-white/5 bg-white/5">
+          {imageLoading && (
+            <div className="absolute inset-0 flex items-center justify-center">
+                <Loader2 className="w-5 h-5 text-brand-primary animate-spin opacity-20" />
+            </div>
+          )}
+          {anime.image ? (
+            <img
+                src={anime.image}
+                alt={anime.title}
+                referrerPolicy="no-referrer"
+                draggable={false}
+                onLoad={() => setImageLoading(false)}
+                className={`w-full h-full object-cover transition-all duration-700 group-hover:scale-105 ${imageLoading ? 'opacity-0 scale-110 blur-xl' : 'opacity-100 scale-100 blur-0'}`}
+            />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center bg-white/5 text-white/10 uppercase font-black italic text-[8px] text-center px-4">
+              HD Image Unavailable
+            </div>
+          )}
           
-          {/* Top Badge */}
           <div className="absolute top-2 left-2 px-1.5 py-0.5 bg-brand-primary text-black text-[9px] font-black rounded-sm italic uppercase">
               FREE
           </div>
 
-          {/* Rating Overlay */}
           <div className="absolute bottom-2 left-2 flex items-center gap-1 text-[10px] font-bold text-white drop-shadow-md">
               <Star className="w-2.5 h-2.5 fill-brand-primary text-brand-primary" />
               {anime.rating}
           </div>
 
-          {/* Play Button Overlay */}
           <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
               <Link 
                 href={watchUrl} 

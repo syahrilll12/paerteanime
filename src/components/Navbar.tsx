@@ -10,6 +10,7 @@ export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeTab, setActiveTab] = useState("Home");
   const [showSchedule, setShowSchedule] = useState(false);
+  const [showSeasons, setShowSeasons] = useState(false);
 
   const [searchQuery, setSearchQuery] = useState("");
   const router = useRouter();
@@ -46,6 +47,13 @@ export const Navbar = () => {
     { day: "Sun", titles: ["One Piece", "Solo Leveling"] },
   ];
 
+  const seasons = [
+    { label: "Winter 2026", id: "winter-2026" },
+    { label: "Fall 2025", id: "fall-2025" },
+    { label: "Summer 2025", id: "summer-2025" },
+    { label: "Spring 2025", id: "spring-2025" },
+  ];
+
   return (
     <motion.nav
       initial={{ y: -20, opacity: 0 }}
@@ -63,17 +71,23 @@ export const Navbar = () => {
             </h1>
           </Link>
           
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-8 h-full">
             {navItems.map((item) => (
               <div 
                 key={item.name} 
-                className="relative group"
-                onMouseEnter={() => item.name === "Schedule" && setShowSchedule(true)}
-                onMouseLeave={() => item.name === "Schedule" && setShowSchedule(false)}
+                className="relative group h-full flex items-center"
+                onMouseEnter={() => {
+                  if (item.name === "Schedule") setShowSchedule(true);
+                  if (item.name === "Seasons") setShowSeasons(true);
+                }}
+                onMouseLeave={() => {
+                  if (item.name === "Schedule") setShowSchedule(false);
+                  if (item.name === "Seasons") setShowSeasons(false);
+                }}
               >
                 <button
                   onClick={() => setActiveTab(item.name)}
-                  className={`flex items-center gap-1.5 text-sm font-semibold transition-all relative ${
+                  className={`flex items-center gap-1.5 text-sm font-semibold transition-all relative py-2 ${
                     activeTab === item.name ? "text-brand-primary scale-110" : "text-white/70 hover:text-white"
                   }`}
                 >
@@ -96,7 +110,7 @@ export const Navbar = () => {
                                 initial={{ opacity: 0, y: 10 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: 10 }}
-                                className="absolute top-full left-0 mt-4 w-[800px] bg-[#1a1c23] border border-white/5 shadow-2xl rounded-xl p-8 grid grid-cols-7 gap-6"
+                                className="absolute top-[calc(100%-8px)] left-0 mt-4 w-[800px] bg-[#1a1c23] border border-white/5 shadow-2xl rounded-xl p-8 grid grid-cols-7 gap-6 z-[110]"
                             >
                                 {releaseSchedule.map((d) => (
                                     <div key={d.day} className="space-y-4 text-center">
@@ -115,15 +129,29 @@ export const Navbar = () => {
                     </AnimatePresence>
                 )}
 
-                {/* Simple Seasons Dropdown */}
+                {/* Seasons Dropdown */}
                 {item.name === "Seasons" && (
-                    <div className="absolute top-full left-0 mt-4 w-48 bg-[#1a1c23] border border-white/5 shadow-2xl rounded-xl p-4 hidden group-hover:block animate-in fade-in slide-in-from-top-2">
-                        {["Winter 2026", "Fall 2025", "Summer 2025", "Spring 2025"].map(s => (
-                             <div key={s} className="px-3 py-2 text-xs font-bold text-white/50 hover:text-brand-primary hover:bg-white/5 rounded-lg cursor-pointer transition-all">
-                                {s}
-                             </div>
-                        ))}
-                    </div>
+                    <AnimatePresence>
+                        {showSeasons && (
+                            <motion.div
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: 10 }}
+                                className="absolute top-[calc(100%-8px)] left-0 mt-4 w-48 bg-[#1a1c23] border border-white/5 shadow-2xl rounded-xl p-4 z-[110]"
+                            >
+                                {seasons.map(s => (
+                                    <Link 
+                                        key={s.id} 
+                                        href={`/seasons?s=${s.id}`}
+                                        className="block px-3 py-2 text-xs font-bold text-white/50 hover:text-brand-primary hover:bg-white/5 rounded-lg transition-all"
+                                        onClick={() => setShowSeasons(false)}
+                                    >
+                                        {s.label}
+                                    </Link>
+                                ))}
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
                 )}
               </div>
             ))}

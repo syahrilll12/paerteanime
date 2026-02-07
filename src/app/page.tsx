@@ -7,6 +7,9 @@ import { AnimeRow } from "@/components/AnimeRow";
 import { ScrapedAnimeList } from "@/components/ScrapedAnimeList";
 import { TopChart } from "@/components/TopChart";
 import { GenreGrid } from "@/components/GenreGrid";
+import { SeasonAnimeRow } from "@/components/SeasonAnimeRow";
+import { RecentReleaseRow } from "@/components/RecentReleaseRow";
+import { RecommendedRow } from "@/components/RecommendedRow";
 import { animeData } from "@/data/anime";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
@@ -41,22 +44,15 @@ export default function Home() {
             >
               <ScrapedAnimeList />
               
+              <SeasonAnimeRow season="winter-2026" title="Winter 2026 Spotlight" />
+              
               <TopChart data={animeData} />
 
-              <AnimeRow 
-                  title="Recommended For You" 
-                  data={[...animeData].sort((a, b) => parseFloat(b.rating) - parseFloat(a.rating))} 
-              />
-              
-              <AnimeRow 
-                  title="Recently Added" 
-                  data={[...animeData].reverse()} 
-              />
-              
-              <AnimeRow 
-                  title="Action & Sci-Fi Masterpieces" 
-                  data={animeData.filter(a => a.category === "Action" || a.category === "Sci-Fi")} 
-              />
+              <RecommendedRow title="Recommended For You" />
+
+              <RecentReleaseRow title="Recently Added Episodes" />
+
+              <SeasonAnimeRow season="fall-2025" title="Flashback: Fall 2025" />
             </motion.div>
           ) : (
             <motion.div
@@ -82,8 +78,6 @@ export default function Home() {
 
               {filteredData.length > 0 ? (
                 <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 container mx-auto px-6">
-                  {/* Reuse components or layout for filtered results */}
-                  {/* For now we can use AnimeRow layout style but as a grid */}
                   <AnimeRow title={`Explore ${selectedGenre}`} data={filteredData} />
                 </div>
               ) : (

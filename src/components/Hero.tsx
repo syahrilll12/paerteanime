@@ -1,27 +1,41 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Play, Info, Plus } from "lucide-react";
+import { Play, Plus, Star, Loader2 } from "lucide-react";
 import { animeData } from "@/data/anime";
 import Link from "next/link";
+import { useState } from "react";
 
 export const Hero = () => {
+  const [imageLoading, setImageLoading] = useState(true);
   const featured = animeData[1]; // Cyberpunk: Edgerunners
+
+  // Clean image for HD
+  const hdImage = featured.image.split('?')[0].replace(/https:\/\/i\d\.wp\.com\//, 'https://');
 
   return (
     <div className="relative h-[85vh] w-full flex items-center overflow-hidden bg-[#0b0c10]">
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img
-          src={featured.image}
-          alt={featured.title}
-          referrerPolicy="no-referrer"
-          className="w-full h-full object-cover"
-        />
-        {/* iQIYI Style Gradients */}
+        {hdImage && (
+          <img
+            src={hdImage}
+            alt={featured.title}
+            referrerPolicy="no-referrer"
+            onLoad={() => setImageLoading(false)}
+            className={`w-full h-full object-cover transition-all duration-1000 ${imageLoading ? 'scale-110 blur-2xl opacity-0' : 'scale-100 blur-0 opacity-100'}`}
+          />
+        )}
+        {/* Gradients */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#0b0c10] via-[#0b0c10]/40 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0b0c10] via-transparent to-transparent" />
       </div>
+
+      {imageLoading && (
+        <div className="absolute inset-0 flex items-center justify-center">
+            <Loader2 className="w-12 h-12 text-brand-primary animate-spin opacity-20" />
+        </div>
+      )}
 
       <div className="container mx-auto px-6 relative z-10">
         <motion.div

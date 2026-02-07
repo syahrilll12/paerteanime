@@ -16,6 +16,18 @@ export interface ScrapedAnime {
   updatedAt: string;
 }
 
+const upgradeImageToHD = (url: string) => {
+  if (!url) return url;
+  let cleanUrl = url;
+  if (cleanUrl.includes('?')) {
+    cleanUrl = cleanUrl.split('?')[0];
+  }
+  if (cleanUrl.includes('i0.wp.com/') || cleanUrl.includes('i1.wp.com/') || cleanUrl.includes('i2.wp.com/') || cleanUrl.includes('i3.wp.com/')) {
+    cleanUrl = cleanUrl.replace(/https:\/\/i\d\.wp\.com\//, 'https://');
+  }
+  return cleanUrl;
+};
+
 export const scrapeSamehadaku = async () => {
   try {
     const { data } = await axios.get('https://samehadaku.li/', {
@@ -32,10 +44,7 @@ export const scrapeSamehadaku = async () => {
       const link = $(el).find('a').attr('href') || '';
       const episode = $(el).find('.epx').text().trim(); 
       let image = $(el).find('img').attr('src') || '';
-      
-      if (image.includes('?')) {
-        image = image.split('?')[0];
-      }
+      image = upgradeImageToHD(image);
       
       const id = link.split('/').filter(Boolean).pop() || Math.random().toString(36).substr(2, 9);
 
@@ -102,11 +111,8 @@ export const searchAnime = async (query: string) => {
       const title = $(el).find('.tt h2').text().trim() || $(el).find('h2').text().trim();
       const link = $(el).find('a').attr('href') || '';
       let image = $(el).find('img').attr('src') || '';
+      image = upgradeImageToHD(image);
       const score = $(el).find('.score').text().trim();
-
-      if (image.includes('?')) {
-        image = image.split('?')[0];
-      }
 
       if (title && link) {
         results.push({
@@ -233,7 +239,6 @@ export const scrapeEpisodeDetails = async (url: string) => {
         await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 45000 });
         await page.waitForTimeout(2000); 
         
-        // Use a better way to get clean title
         title = await page.$eval('.entry-title', el => el.textContent?.trim() || '').catch(() => '');
         if (!title) title = await page.title();
 
@@ -248,7 +253,7 @@ export const scrapeEpisodeDetails = async (url: string) => {
             if (opt.value && opt.value.length > 10) {
                 try {
                     const decoded = Buffer.from(opt.value, 'base64').toString('utf-8');
-                    let streamUrl = decoded.match(/src=\\"([^\\"]+)\\"/)?.[1] || decoded.match(/href=\\"([^\\"]+)\\"/)?.[1];
+                    let streamUrl = decoded.match(/src=\\"([^\\"]+)\\\"/)?.[1] || decoded.match(/href=\\"([^\\"]+)\\\"/)?.[1];
                     if (!streamUrl && decoded.startsWith('http')) streamUrl = decoded;
                     
                     if (streamUrl) {
@@ -276,7 +281,6 @@ export const scrapeEpisodeDetails = async (url: string) => {
             streams.push({ provider: 'Default', url: iframeSrc });
         }
 
-        // Extract Download Links
         downloadLinks = await page.$$eval('.download-eps li', (els) => {
             return els.flatMap(el => {
                 const quality = el.querySelector('strong')?.textContent?.trim() || 'Unknown';
@@ -352,21 +356,18 @@ export const scrapeSeasons = async (season: string) => {
       const title = $(el).find('h2').text().trim();
       const link = $(el).find('a').attr('href') || '';
       let image = $(el).find('img').attr('src') || '';
+      image = upgradeImageToHD(image);
       const score = $(el).find('.right').text().trim();
-      const category = $(el).find('.card-info-bottom a').first().text().trim();
+      const cat = $(el).find('.card-info-bottom a').first().text().trim();
 
-      if (image.includes('?')) {
-        image = image.split('?')[0];
-      }
-
-      if (title && link) {
+      if (title && link && image) {
         results.push({
           id: link.split('/').filter(Boolean).pop() || '',
           title,
           link,
           image,
           rating: score === '?' ? '0.0' : score,
-          category: category || 'Anime'
+          category: cat || 'Anime'
         });
       }
     });
