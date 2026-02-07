@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TelanaNime 🌌
 
-## Getting Started
+Platform streaming anime modern dengan fitur otomatisasi sinkronisasi, kualitas visual HD, dan pengalaman pengguna yang premium.
 
-First, run the development server:
+## Fitur Utama ✨
 
+- **Smart Scraping System**: Mengintegrasikan data secara *real-time* dari Samehadaku menggunakan Playwright dan Cheerio.
+- **High-Definition Visuals**: Bypass otomatis CDN kompresi untuk memastikan poster anime selalu tampil tajam (HD).
+- **Advanced Video Player**:
+  - Navigasi Keyboard (Maju/Mundur 10 detik, Play/Pause).
+  - Indikator Buffering & Sinkronisasi Node.
+  - Pemilihan Resolusi Otomatis (Default ke kualitas tertinggi).
+  - **Resume Play**: Mengingat posisi terakhir tontonan Anda.
+- **Dynamic Content**:
+  - Filter Live Updates (Today & Weekly).
+  - Top 10 Global Trending Chart.
+  - Season Archives (Winter 2026, Fall 2025, dll).
+  - Rekomendasi berdasarkan popularitas data nyata.
+- **Persistent Storage**: Menggunakan PostgreSQL (Docker) dan SQLite untuk caching link streaming dan daftar episode.
+- **Automated Sync**: Scheduler otomatis setiap 1 jam untuk memperbarui daftar anime terbaru.
+
+## Teknologi yang Digunakan 🛠️
+
+- **Frontend**: Next.js 15+, Tailwind CSS, Framer Motion, Lucide React.
+- **Backend**: Next.js API Routes, Playwright (Headless Browser), Axios, Cheerio.
+- **Database**: PostgreSQL (Docker), SQLite (Local Cache), Prisma ORM.
+- **DevOps**: Docker Compose, Node-cron (Scheduler).
+
+## Cara Menjalankan Project 🚀
+
+### 1. Prasyarat
+- Node.js installed
+- Docker & Docker Compose installed
+
+### 2. Inisialisasi Database
+Jalankan PostgreSQL menggunakan Docker:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+docker-compose up -d
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. Instalasi Dependensi
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 4. Sinkronisasi Database
+```bash
+npx prisma generate
+npx prisma migrate dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 5. Jalankan Mode Development
+```bash
+npm run dev
+```
 
-## Learn More
+Buka [http://localhost:3000](http://localhost:3000) di browser Anda.
 
-To learn more about Next.js, take a look at the following resources:
+## Disclaimer ⚖️
+Project ini dibuat untuk tujuan edukasi dan pengembangan portofolio. Seluruh konten video dan gambar merupakan hak milik dari sumber aslinya (Samehadaku). Kami tidak menyimpan file video di server kami.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+Built with 💙 by **Telana Team**
