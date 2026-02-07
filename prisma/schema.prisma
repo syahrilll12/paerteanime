@@ -1,0 +1,38 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Anime {
+  id        String    @id
+  title     String
+  url       String?   @unique
+  image     String?
+  type      String?
+  updatedAt DateTime  @default(now()) @map("updated_at")
+  episodes  Episode[]
+
+  @@map("anime")
+}
+
+model Episode {
+  id            Int      @id @default(autoincrement())
+  animeId       String   @map("anime_id")
+  title         String
+  url           String   @unique
+  streamData    String?  @map("stream_data")
+  episodeList   String?  @map("episode_list")
+  downloadLinks String?  @map("download_links")
+  updatedAt     DateTime @default(now()) @map("updated_at")
+  anime         Anime    @relation(fields: [animeId], references: [id])
+
+  @@index([animeId])
+  @@map("episodes")
+}

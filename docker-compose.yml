@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  pertenime-db:
+    image: postgres:15-alpine
+    container_name: pertenime-db
+    environment:
+      POSTGRES_USER: pertenime
+      POSTGRES_PASSWORD: pertenime_password
+      POSTGRES_DB: pertenime_db
+    ports:
+      - "5433:5432" # Menggunakan port 5433 untuk menghindari konflik jika ada postgress lain di 5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: always
+
+volumes:
+  postgres_data:
