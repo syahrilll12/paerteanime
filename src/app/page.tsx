@@ -10,6 +10,7 @@ import { GenreGrid } from "@/components/GenreGrid";
 import { SeasonAnimeRow } from "@/components/SeasonAnimeRow";
 import { RecentReleaseRow } from "@/components/RecentReleaseRow";
 import { RecommendedRow } from "@/components/RecommendedRow";
+import { WatchlistRow } from "@/components/WatchlistRow";
 import { ContinueWatching } from "@/components/ContinueWatching";
 import { animeData } from "@/data/anime";
 import Link from "next/link";
@@ -24,7 +25,7 @@ export default function Home() {
   }, [selectedGenre]);
 
   return (
-    <main className="min-h-screen bg-[#0b0c10] text-white">
+    <main className="min-h-screen bg-[#0b0c10] text-white pb-20">
       <Navbar />
       <Hero />
       
@@ -44,6 +45,7 @@ export default function Home() {
               className="space-y-16"
             >
               <ContinueWatching />
+              <WatchlistRow />
 
               <ScrapedAnimeList />
               
@@ -98,7 +100,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-16">
             <div className="col-span-2 space-y-8">
               <Link href="/" className="flex items-center gap-2">
-                <div className="w-10 h-10 bg-brand-primary rounded-sm flex items-center justify-center font-black text-black italic text-2xl">T</div>
+                <div className="w-10 h-10 bg-brand-primary rounded-sm flex items-center justify-center font-black text-black italic text-2xl shadow-[0_0_15px_rgba(14,165,233,0.4)]">T</div>
                 <h2 className="text-3xl font-bold tracking-tighter text-white uppercase">
                     Telana<span className="text-brand-primary italic">Nime</span>
                 </h2>
@@ -133,7 +135,7 @@ export default function Home() {
           </div>
           
           <div className="mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-mono text-white/10 uppercase tracking-widest">
-            <p>© 2026 PAERTE LABS INTEGRATED. ALL RIGHTS RESERVED.</p>
+            <p>© 2026 TELANA LABS INTEGRATED. ALL RIGHTS RESERVED.</p>
             <p>DATA SYNCHRONIZED VIA SAMEHADAKU PROTOCOL</p>
           </div>
         </div>

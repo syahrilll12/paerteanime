@@ -1,63 +1,59 @@
 # TelanaNime 🌌
 
-Platform streaming anime modern dengan fitur otomatisasi sinkronisasi, kualitas visual HD, dan pengalaman pengguna yang premium.
+Platform streaming anime modern dengan fitur otomatisasi sinkronisasi, kualitas visual HD, dan pengalaman pengguna yang premium (iQIYI-inspired).
 
-## Fitur Utama ✨
+## Fitur Unggulan 🚀
 
-- **Smart Scraping System**: Mengintegrasikan data secara *real-time* dari Samehadaku menggunakan Playwright dan Cheerio.
-- **High-Definition Visuals**: Bypass otomatis CDN kompresi untuk memastikan poster anime selalu tampil tajam (HD).
+### 1. Smart Scraping & Cloud Sync
+- **Automated Sync**: Sinkronisasi data otomatis setiap 1 jam dari sumber terpercaya (Samehadaku) ke database PostgreSQL.
+- **Cloud History**: Riwayat tontonan tersimpan di cloud (Postgres), memungkinkan sinkronisasi *Continue Watching* antar perangkat.
+- **Instant Discovery**: Fitur pencarian instan pada Navbar yang menampilkan hasil (poster & judul) secara *real-time* saat mengetik.
+
+### 2. High-Fidelity Streaming Experience
+- **HD Visual Overhaul**: Bypass otomatis kompresi CDN untuk menampilkan poster dan latar belakang dalam resolusi tajam.
 - **Advanced Video Player**:
-  - Navigasi Keyboard (Maju/Mundur 10 detik, Play/Pause).
-  - Indikator Buffering & Sinkronisasi Node.
-  - Pemilihan Resolusi Otomatis (Default ke kualitas tertinggi).
-  - **Resume Play**: Mengingat posisi terakhir tontonan Anda.
-- **Dynamic Content**:
-  - Filter Live Updates (Today & Weekly).
+  - **Resolution Selector**: Pilihan kualitas video (1080p, 720p, 480p).
+  - **Smart Buffer Indicator**: Loading state yang akurat saat *seeking* atau koneksi tidak stabil.
+  - **Keyboard Shortcuts**: Gunakan `Space` untuk Play/Pause, serta `Panah Kiri/Kanan` untuk skip 10 detik.
+  - **Auto-Play Next Episode**: Hitung mundur dan transisi otomatis ke episode berikutnya saat video selesai.
+  - **Resume Play**: Notifikasi cerdas untuk melanjutkan tontonan dari detik terakhir.
+
+### 3. User-Centric Design
+- **iQIYI Style UI**: Antarmuka premium dengan tema *Deep Black* dan aksen *Sky Blue*.
+- **Mobile Friendly & PWA**: Website dapat di-install sebagai aplikasi di HP (PWA) dengan navigasi *Bottom Bar* yang intuitif.
+- **Personal Watchlist**: Simpan anime favorit Anda ke daftar tontonan (Bookmarks) yang terhubung ke akun user.
+- **Dynamic Content Rows**:
+  - Global Live Updates (Today/Weekly filter).
   - Top 10 Global Trending Chart.
-  - Season Archives (Winter 2026, Fall 2025, dll).
-  - Rekomendasi berdasarkan popularitas data nyata.
-- **Persistent Storage**: Menggunakan PostgreSQL (Docker) dan SQLite untuk caching link streaming dan daftar episode.
-- **Automated Sync**: Scheduler otomatis setiap 1 jam untuk memperbarui daftar anime terbaru.
+  - Season Spotlight & Flashback Archives.
 
-## Teknologi yang Digunakan 🛠️
+## Teknologi & Arsitektur 🛠️
 
-- **Frontend**: Next.js 15+, Tailwind CSS, Framer Motion, Lucide React.
-- **Backend**: Next.js API Routes, Playwright (Headless Browser), Axios, Cheerio.
+- **Frontend**: Next.js 16 (Turbopack), Tailwind CSS, Framer Motion, Lucide React.
+- **Backend & Scraper**: Playwright (Headless Browser), Axios, Cheerio, Node-cron.
 - **Database**: PostgreSQL (Docker), SQLite (Local Cache), Prisma ORM.
-- **DevOps**: Docker Compose, Node-cron (Scheduler).
+- **Authentication**: NextAuth.js v5 (Google OAuth & Credentials).
 
-## Cara Menjalankan Project 🚀
+## Cara Instalasi & Menjalankan 🚀
 
-### 1. Prasyarat
-- Node.js installed
-- Docker & Docker Compose installed
-
-### 2. Inisialisasi Database
-Jalankan PostgreSQL menggunakan Docker:
-```bash
-docker-compose up -d
-```
-
-### 3. Instalasi Dependensi
-```bash
-npm install
-```
-
-### 4. Sinkronisasi Database
-```bash
-npx prisma generate
-npx prisma migrate dev
-```
-
-### 5. Jalankan Mode Development
-```bash
-npm run dev
-```
-
-Buka [http://localhost:3000](http://localhost:3000) di browser Anda.
-
-## Disclaimer ⚖️
-Project ini dibuat untuk tujuan edukasi dan pengembangan portofolio. Seluruh konten video dan gambar merupakan hak milik dari sumber aslinya (Samehadaku). Kami tidak menyimpan file video di server kami.
+1. **Persiapan**: Pastikan Docker sudah terinstall dan berjalan.
+2. **Setup Database**:
+   ```bash
+   docker-compose up -d
+   ```
+3. **Install Dependensi**:
+   ```bash
+   npm install --legacy-peer-deps
+   ```
+4. **Migrasi Prisma**:
+   ```bash
+   npx prisma migrate dev
+   ```
+5. **Jalankan Aplikasi**:
+   ```bash
+   npm run dev
+   ```
 
 ---
 Built with 💙 by **Telana Team**
+Project ini dikembangkan untuk tujuan edukasi dan pengembangan portofolio.
