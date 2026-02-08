@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { BottomNav } from "@/components/mobile/BottomNav";
+import { NextAuthProvider } from "@/components/providers/NextAuthProvider";
 
 export const metadata: Metadata = {
   title: "TelanaNime | HD Anime Streaming",
@@ -32,8 +33,10 @@ export default function RootLayout({
         <link href="https://api.fontshare.com/v2/css?f[]=clash-display@200,400,700,900&display=swap" rel="stylesheet" />
       </head>
       <body className="antialiased selection:bg-brand-primary selection:text-white pb-16 lg:pb-0">
-        {children}
-        <BottomNav />
+        <NextAuthProvider>
+          {children}
+          <BottomNav />
+        </NextAuthProvider>
       </body>
     </html>
   );

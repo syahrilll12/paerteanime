@@ -486,7 +486,6 @@ function TelanaWatchContent() {
                 </div>
 
                 <div className="space-y-6 hidden md:block">
-                    {/* Placeholder for future features or extra info */}
                     <div className="glass p-6 rounded-xl border-l-2 border-brand-primary space-y-2">
                         <h4 className="text-[10px] font-black uppercase text-brand-primary tracking-widest">Protocol Tip</h4>
                         <p className="text-[10px] leading-relaxed text-white/40 font-medium">Use [SPACE] to toggle playback, and [ARROWS] to seek. Select resolutions from the settings icon on player node.</p>

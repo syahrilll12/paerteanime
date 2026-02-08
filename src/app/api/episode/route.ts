@@ -33,7 +33,8 @@ export async function GET(request: Request) {
     return NextResponse.json({ 
       success: true, 
       ...result,
-      streams: enrichedStreams
+      streams: enrichedStreams,
+      downloads: (result as any).downloads || []
     });
   } catch (error: any) {
     console.error('[API Episode] Error:', error);
