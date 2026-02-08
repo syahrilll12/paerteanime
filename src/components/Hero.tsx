@@ -1,87 +1,140 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Play, Plus, Star, Loader2 } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Play, Plus, Star, Loader2, ChevronLeft, ChevronRight } from "lucide-react";
 import { animeData } from "@/data/anime";
 import Link from "next/link";
-import { useState } from "react";
+import Image from "next/image";
+import { useState, useEffect } from "react";
 
 export const Hero = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [imageLoading, setImageLoading] = useState(true);
-  const featured = animeData[1]; // Cyberpunk: Edgerunners
+  
+  // Featured list for carousel
+  const featuredList = animeData.slice(0, 5);
+  const current = featuredList[currentIndex];
 
-  // Clean image for HD
-  const hdImage = featured.image.split('?')[0].replace(/https:\/\/i\d\.wp\.com\//, 'https://');
+  useEffect(() => {
+    const timer = setInterval(() => {
+      handleNext();
+    }, 8000);
+    return () => clearInterval(timer);
+  }, [currentIndex]);
+
+  const handleNext = () => {
+    setImageLoading(true);
+    setCurrentIndex((prev) => (prev + 1) % featuredList.length);
+  };
+
+  const handlePrev = () => {
+    setImageLoading(true);
+    setCurrentIndex((prev) => (prev - 1 + featuredList.length) % featuredList.length);
+  };
+
+  const hdImage = current.image.split('?')[0].replace(/https:\/\/i\d\.wp\.com\//, 'https://');
 
   return (
     <div className="relative h-[85vh] w-full flex items-center overflow-hidden bg-[#0b0c10]">
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        {hdImage && (
-          <img
-            src={hdImage}
-            alt={featured.title}
-            referrerPolicy="no-referrer"
-            onLoad={() => setImageLoading(false)}
-            className={`w-full h-full object-cover transition-all duration-1000 ${imageLoading ? 'scale-110 blur-2xl opacity-0' : 'scale-100 blur-0 opacity-100'}`}
-          />
-        )}
-        {/* Gradients */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0b0c10] via-[#0b0c10]/40 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0b0c10] via-transparent to-transparent" />
-      </div>
-
-      {imageLoading && (
-        <div className="absolute inset-0 flex items-center justify-center">
-            <Loader2 className="w-12 h-12 text-brand-primary animate-spin opacity-20" />
-        </div>
-      )}
+      {/* Background Layer with Transition */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentIndex}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1 }}
+          className="absolute inset-0"
+        >
+          {hdImage && (
+            <Image
+              src={hdImage}
+              alt={current.title}
+              fill
+              priority
+              className={`object-cover transition-all duration-1000 ${imageLoading ? 'scale-110 blur-2xl opacity-0' : 'scale-100 blur-0 opacity-100'}`}
+              onLoad={() => setImageLoading(false)}
+              unoptimized
+            />
+          )}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0b0c10] via-[#0b0c10]/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0b0c10] via-transparent to-transparent" />
+        </motion.div>
+      </AnimatePresence>
 
       <div className="container mx-auto px-6 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-2xl"
-        >
-          <div className="flex items-center gap-3 mb-6">
-            <div className="flex items-center gap-1.5 px-2 py-0.5 bg-brand-primary text-black text-[10px] font-black uppercase italic rounded-sm">
-                NEW
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentIndex}
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 30 }}
+            transition={{ duration: 0.6 }}
+            className="max-w-2xl"
+          >
+            <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center gap-1.5 px-2 py-0.5 bg-brand-primary text-black text-[10px] font-black uppercase italic rounded-sm">
+                  SPOTLIGHT
+              </div>
+              <span className="text-sm font-bold text-white/80">
+                {current.category} • {current.year} • ★{current.rating}
+              </span>
             </div>
-            <span className="text-sm font-bold text-white/80">
-              {featured.category} • {featured.year} • ★{featured.rating}
-            </span>
-          </div>
 
-          <h1 className="text-5xl md:text-7xl font-display font-black tracking-tighter mb-6 text-white uppercase leading-tight">
-            {featured.title}
-          </h1>
+            <h1 className="text-5xl md:text-7xl font-display font-black tracking-tight mb-6 text-white uppercase leading-tight drop-shadow-2xl">
+              {current.title}
+            </h1>
 
-          <p className="text-base text-white/60 mb-10 max-w-lg leading-relaxed line-clamp-3">
-            {featured.description}
-          </p>
+            <p className="text-base text-white/60 mb-10 max-w-lg leading-relaxed line-clamp-3">
+              {current.description}
+            </p>
 
-          <div className="flex items-center gap-4">
-            <Link 
-              href={`/watch/${featured.id}?title=${encodeURIComponent(featured.title)}`}
-              className="flex items-center gap-3 bg-brand-primary text-black px-10 py-4 rounded-full font-black hover:bg-white transition-all transform hover:scale-105 active:scale-95 uppercase italic tracking-tight"
-            >
-              <Play className="w-5 h-5 fill-current" />
-              Watch Now
-            </Link>
-            <button className="flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-full font-bold transition-all backdrop-blur-md">
-              <Plus className="w-5 h-5" />
-              My List
-            </button>
-          </div>
-        </motion.div>
+            <div className="flex items-center gap-4">
+              <Link 
+                href={`/watch/${current.id}?title=${encodeURIComponent(current.title)}`}
+                className="flex items-center gap-3 bg-brand-primary text-black px-10 py-4 rounded-full font-black hover:bg-white transition-all transform hover:scale-105 active:scale-95 uppercase italic tracking-tight shadow-[0_0_30px_rgba(14,165,233,0.3)]"
+              >
+                <Play className="w-5 h-5 fill-current" />
+                Watch Now
+              </Link>
+              <button className="flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-full font-bold transition-all backdrop-blur-md border border-white/5">
+                <Plus className="w-5 h-5" />
+                My List
+              </button>
+            </div>
+          </motion.div>
+        </AnimatePresence>
       </div>
 
-      {/* Side Featured Tag */}
-      <div className="absolute right-10 bottom-20 hidden lg:flex flex-col items-end gap-2">
-        <div className="w-1.5 h-12 bg-brand-primary rounded-full shadow-[0_0_15px_rgba(14,165,233,0.5)]" />
-        <span className="text-[10px] font-black uppercase tracking-[0.3em] text-white/20 rotate-90 origin-right translate-y-12">
-            FEATURED_CONTENT
+      {/* Navigation Arrows */}
+      <div className="absolute bottom-10 right-6 flex items-center gap-4 z-20">
+        <button 
+          onClick={handlePrev}
+          className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/10 transition-colors backdrop-blur-md"
+        >
+          <ChevronLeft className="w-6 h-6 text-white" />
+        </button>
+        <div className="flex items-center gap-2">
+            {featuredList.map((_, i) => (
+                <div 
+                    key={i} 
+                    className={`h-1.5 transition-all duration-500 rounded-full ${currentIndex === i ? 'w-8 bg-brand-primary' : 'w-1.5 bg-white/20'}`} 
+                />
+            ))}
+        </div>
+        <button 
+          onClick={handleNext}
+          className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/10 transition-colors backdrop-blur-md"
+        >
+          <ChevronRight className="w-6 h-6 text-white" />
+        </button>
+      </div>
+
+      {/* Vertical Featured Tag */}
+      <div className="absolute right-10 top-1/2 -translate-y-1/2 hidden lg:flex flex-col items-end gap-2 pointer-events-none opacity-20">
+        <div className="w-1.5 h-24 bg-brand-primary rounded-full shadow-[0_0_15px_rgba(14,165,233,0.5)]" />
+        <span className="text-[10px] font-black uppercase tracking-[0.5em] text-white rotate-90 origin-right translate-y-20 whitespace-nowrap">
+            PREMIUM_SELECTION
         </span>
       </div>
     </div>

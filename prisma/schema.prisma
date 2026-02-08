@@ -7,7 +7,83 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime? @map("email_verified")
+  password      String?
+  image         String?
+  createdAt     DateTime  @default(now()) @map("created_at")
+  updatedAt     DateTime  @updatedAt @map("updated_at")
+  
+  accounts      Account[]
+  sessions      Session[]
+  watchHistory  WatchHistory[]
+  bookmarks     Bookmark[]
+
+  @@map("users")
+}
+
+model Account {
+  id                 String  @id @default(cuid())
+  userId             String  @map("user_id")
+  type               String
+  provider           String
+  providerAccountId  String  @map("provider_account_id")
+  refresh_token      String? @db.Text
+  access_token       String? @db.Text
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String? @db.Text
+  session_state      String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique @map("session_token")
+  userId       String   @map("user_id")
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+model WatchHistory {
+  id        String   @id @default(cuid())
+  userId    String   @map("user_id")
+  animeId   String   @map("anime_id")
+  episodeId Int      @map("episode_id")
+  progress  Float    // Progress in seconds
+  updatedAt DateTime @default(now()) @map("updated_at")
+
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  anime   Anime   @relation(fields: [animeId], references: [id], onDelete: Cascade)
+  episode Episode @relation(fields: [episodeId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, animeId, episodeId])
+  @@map("watch_history")
+}
+
+model Bookmark {
+  id        String   @id @default(cuid())
+  userId    String   @map("user_id")
+  animeId   String   @map("anime_id")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  anime Anime @relation(fields: [animeId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, animeId])
+  @@map("bookmarks")
 }
 
 model Anime {
@@ -18,6 +94,8 @@ model Anime {
   type      String?
   updatedAt DateTime  @default(now()) @map("updated_at")
   episodes  Episode[]
+  watchHistory WatchHistory[]
+  bookmarks    Bookmark[]
 
   @@map("anime")
 }
@@ -32,6 +110,7 @@ model Episode {
   downloadLinks String?  @map("download_links")
   updatedAt     DateTime @default(now()) @map("updated_at")
   anime         Anime    @relation(fields: [animeId], references: [id])
+  watchHistory  WatchHistory[]
 
   @@index([animeId])
   @@map("episodes")

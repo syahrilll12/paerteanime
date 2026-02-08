@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Play, Star, Loader2 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { useRef, useEffect, useState } from "react";
 
 interface AnimeCardProps {
@@ -34,13 +35,14 @@ export const AnimeCard = ({ anime }: AnimeCardProps) => {
             </div>
           )}
           {anime.image ? (
-            <img
+            <Image
                 src={anime.image}
                 alt={anime.title}
-                referrerPolicy="no-referrer"
-                draggable={false}
+                fill
+                sizes="(max-width: 768px) 160px, 192px"
+                className={`object-cover transition-all duration-700 group-hover:scale-105 ${imageLoading ? 'opacity-0 scale-110 blur-xl' : 'opacity-100 scale-100 blur-0'}`}
                 onLoad={() => setImageLoading(false)}
-                className={`w-full h-full object-cover transition-all duration-700 group-hover:scale-105 ${imageLoading ? 'opacity-0 scale-110 blur-xl' : 'opacity-100 scale-100 blur-0'}`}
+                unoptimized // Keep unoptimized for now to ensure referrer headers work via browser
             />
           ) : (
             <div className="w-full h-full flex items-center justify-center bg-white/5 text-white/10 uppercase font-black italic text-[8px] text-center px-4">

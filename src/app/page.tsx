@@ -10,6 +10,7 @@ import { GenreGrid } from "@/components/GenreGrid";
 import { SeasonAnimeRow } from "@/components/SeasonAnimeRow";
 import { RecentReleaseRow } from "@/components/RecentReleaseRow";
 import { RecommendedRow } from "@/components/RecommendedRow";
+import { ContinueWatching } from "@/components/ContinueWatching";
 import { animeData } from "@/data/anime";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
@@ -42,6 +43,8 @@ export default function Home() {
               exit={{ opacity: 0 }}
               className="space-y-16"
             >
+              <ContinueWatching />
+
               <ScrapedAnimeList />
               
               <SeasonAnimeRow season="winter-2026" title="Winter 2026 Spotlight" />
