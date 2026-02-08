@@ -4,7 +4,12 @@ import { useEffect, useState } from "react";
 import { AnimeRow } from "./AnimeRow";
 import { Loader2 } from "lucide-react";
 
-export const RecentReleaseRow = ({ title }: { title: string }) => {
+interface RecentReleaseRowProps {
+  title: string;
+  onViewMore?: (title: string, data: any[]) => void;
+}
+
+export const RecentReleaseRow = ({ title, onViewMore }: RecentReleaseRowProps) => {
   const [data, setData] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -14,7 +19,6 @@ export const RecentReleaseRow = ({ title }: { title: string }) => {
         const res = await fetch(`/api/scrape`);
         const json = await res.json();
         if (json.success) {
-          // Format to match AnimeCard expectations
           const formatted = json.data.map((item: any) => ({
             ...item,
             category: "Latest Release",
@@ -44,6 +48,6 @@ export const RecentReleaseRow = ({ title }: { title: string }) => {
   if (data.length === 0) return null;
 
   return (
-    <AnimeRow title={title} data={data} />
+    <AnimeRow title={title} data={data} onViewMore={onViewMore} />
   );
 };

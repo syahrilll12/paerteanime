@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Play, Star, Loader2 } from "lucide-react";
+import { Play, Star, Loader2, Globe, Map } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRef, useEffect, useState } from "react";
@@ -14,6 +14,8 @@ interface AnimeCardProps {
     category: string;
     rating: string;
     link?: string;
+    origin?: string;
+    type?: string;
   };
 }
 
@@ -22,6 +24,8 @@ export const AnimeCard = ({ anime }: AnimeCardProps) => {
   const watchUrl = anime.link 
     ? `/watch/${anime.id}?url=${encodeURIComponent(anime.link)}`
     : `/watch/${anime.id}?title=${encodeURIComponent(anime.title)}`;
+
+  const origin = anime.origin || anime.type || "Japan";
 
   return (
     <motion.div
@@ -42,7 +46,7 @@ export const AnimeCard = ({ anime }: AnimeCardProps) => {
                 sizes="(max-width: 768px) 160px, 192px"
                 className={`object-cover transition-all duration-700 group-hover:scale-105 ${imageLoading ? 'opacity-0 scale-110 blur-xl' : 'opacity-100 scale-100 blur-0'}`}
                 onLoad={() => setImageLoading(false)}
-                unoptimized // Keep unoptimized for now to ensure referrer headers work via browser
+                unoptimized 
             />
           ) : (
             <div className="w-full h-full flex items-center justify-center bg-white/5 text-white/10 uppercase font-black italic text-[8px] text-center px-4">
@@ -50,16 +54,21 @@ export const AnimeCard = ({ anime }: AnimeCardProps) => {
             </div>
           )}
           
-          <div className="absolute top-2 left-2 px-1.5 py-0.5 bg-brand-primary text-black text-[9px] font-black rounded-sm italic uppercase">
+          <div className="absolute top-2 left-2 px-1.5 py-0.5 bg-brand-primary text-black text-[9px] font-black rounded-sm italic uppercase z-10 shadow-lg">
               FREE
           </div>
 
-          <div className="absolute bottom-2 left-2 flex items-center gap-1 text-[10px] font-bold text-white drop-shadow-md">
+          <div className={`absolute top-2 right-2 px-1.5 py-0.5 backdrop-blur-md border border-white/10 rounded-sm flex items-center gap-1 z-10 shadow-lg ${origin === 'China' ? 'bg-orange-500/20 text-orange-400' : 'bg-blue-500/20 text-blue-400'}`}>
+              {origin === 'China' ? <Map className="w-2 h-2" /> : <Globe className="w-2 h-2" />}
+              <span className="text-[8px] font-black uppercase tracking-tighter">{origin}</span>
+          </div>
+
+          <div className="absolute bottom-2 left-2 flex items-center gap-1 text-[10px] font-bold text-white drop-shadow-md z-10">
               <Star className="w-2.5 h-2.5 fill-brand-primary text-brand-primary" />
               {anime.rating}
           </div>
 
-          <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+          <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center z-20">
               <Link 
                 href={watchUrl} 
                 draggable={false}
@@ -73,14 +82,26 @@ export const AnimeCard = ({ anime }: AnimeCardProps) => {
       <h3 className="text-sm font-bold line-clamp-1 group-hover:text-brand-primary transition-colors pr-2">
           {anime.title}
       </h3>
-      <p className="text-[10px] text-white/40 font-medium uppercase tracking-wider mt-0.5">
-          {anime.category}
-      </p>
+      <div className="flex items-center gap-2 mt-0.5">
+          <p className="text-[10px] text-white/40 font-medium uppercase tracking-wider">
+              {anime.category}
+          </p>
+          <span className="w-1 h-1 bg-white/10 rounded-full" />
+          <p className={`text-[9px] font-black uppercase italic ${origin === 'China' ? 'text-orange-500/40' : 'text-blue-500/40'}`}>
+              {origin}
+          </p>
+      </div>
     </motion.div>
   );
 };
 
-export const AnimeRow = ({ title, data }: { title: string; data: any[] }) => {
+interface AnimeRowProps {
+  title: string;
+  data: any[];
+  onViewMore?: (title: string, data: any[]) => void;
+}
+
+export const AnimeRow = ({ title, data, onViewMore }: AnimeRowProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [constraints, setConstraints] = useState({ left: 0, right: 0 });
 
@@ -98,9 +119,14 @@ export const AnimeRow = ({ title, data }: { title: string; data: any[] }) => {
           <span className="w-1.5 h-6 bg-brand-primary rounded-full shadow-[0_0_10px_#0ea5e9]" />
           {title}
         </h2>
-        <Link href="#" className="text-xs font-bold text-white/30 hover:text-brand-primary transition-colors">
-          View More
-        </Link>
+        {onViewMore && (
+            <button 
+                onClick={() => onViewMore(title, data)}
+                className="text-xs font-bold text-white/30 hover:text-brand-primary transition-colors"
+            >
+                View More
+            </button>
+        )}
       </div>
       
       <div className="px-6" ref={containerRef}>

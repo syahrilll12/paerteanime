@@ -1,14 +1,15 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { Search, Bell, User, Menu, Calendar, LayoutGrid, ChevronDown, Play, Star, Loader2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import Image from "next/image";
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
   const [activeTab, setActiveTab] = useState("Home");
   const [showSchedule, setShowSchedule] = useState(false);
   const [showSeasons, setShowSeasons] = useState(false);
@@ -16,7 +17,6 @@ export const Navbar = () => {
   const [instantResults, setInstantResults] = useState<any[]>([]);
   const [isSearching, setIsSearching] = useState(false);
   const [showInstantSearch, setShowInstantSearch] = useState(false);
-  const searchContainerRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
   const handleSearch = (e: React.FormEvent) => {
@@ -32,21 +32,15 @@ export const Navbar = () => {
       setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener("scroll", handleScroll);
-    
-    const handleClickOutside = (event: MouseEvent) => {
-      if (searchContainerRef.current && !searchContainerRef.current.contains(event.target as Node)) {
-        setShowInstantSearch(false);
-      }
-    };
-    window.addEventListener("mousedown", handleClickOutside);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("mousedown", handleClickOutside);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Instant Search Logic
+  useEffect(() => {
+    if (pathname === "/") setActiveTab("Home");
+    else if (pathname.startsWith("/seasons")) setActiveTab("Seasons");
+    else if (pathname.startsWith("/popular")) setActiveTab("Popular");
+  }, [pathname]);
+
   useEffect(() => {
     const delayDebounceFn = setTimeout(async () => {
       if (searchQuery.length >= 3) {
@@ -89,7 +83,7 @@ export const Navbar = () => {
     { day: "Sun", titles: ["One Piece", "Solo Leveling"] },
   ];
 
-  const seasons = [
+  const seasonsList = [
     { label: "Winter 2026", id: "winter-2026" },
     { label: "Fall 2025", id: "fall-2025" },
     { label: "Summer 2025", id: "summer-2025" },
@@ -145,82 +139,82 @@ export const Navbar = () => {
                     )}
                   </Link>
                 ) : (
-                  <button
-                    onClick={() => setActiveTab(item.name)}
-                    className={`flex items-center gap-1.5 text-sm font-semibold transition-all relative py-2 ${
-                      activeTab === item.name ? "text-brand-primary scale-110" : "text-white/70 hover:text-white"
-                    }`}
-                  >
-                    {item.icon}
-                    {item.name}
-                    {item.dropdown && <ChevronDown className="w-3 h-3 opacity-40 group-hover:opacity-100 transition-opacity" />}
-                    {activeTab === item.name && (
-                      <motion.div 
-                        layoutId="navUnderline"
-                        className="absolute -bottom-1 left-0 right-0 h-0.5 bg-brand-primary" 
-                      />
-                    )}
-                  </button>
+                  <div className="relative">
+                    <button
+                      className={`flex items-center gap-1.5 text-sm font-semibold transition-all relative py-2 ${
+                        activeTab === item.name ? "text-brand-primary scale-110" : "text-white/70 hover:text-white"
+                      }`}
+                    >
+                      {item.icon}
+                      {item.name}
+                      {item.dropdown && <ChevronDown className="w-3 h-3 opacity-40 group-hover:opacity-100 transition-opacity" />}
+                      {activeTab === item.name && (
+                        <motion.div 
+                          layoutId="navUnderline"
+                          className="absolute -bottom-1 left-0 right-0 h-0.5 bg-brand-primary" 
+                        />
+                      )}
+                    </button>
+                    
+                    {/* Hover Area Bridging */}
+                    <div className="absolute top-full left-0 w-full h-4 bg-transparent" />
+                  </div>
                 )}
 
                 {/* Mega Menu Schedule */}
-                {item.name === "Schedule" && (
-                    <AnimatePresence>
-                        {showSchedule && (
-                            <motion.div
-                                initial={{ opacity: 0, y: 10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: 10 }}
-                                className="absolute top-[calc(100%-8px)] left-0 mt-4 w-[800px] bg-[#1a1c23] border border-white/5 shadow-2xl rounded-xl p-8 grid grid-cols-7 gap-6 z-[110]"
-                            >
-                                {releaseSchedule.map((d) => (
-                                    <div key={d.day} className="space-y-4 text-center">
-                                        <div className="text-[12px] font-black uppercase text-brand-primary bg-brand-primary/10 py-1.5 rounded-md tracking-widest">{d.day}</div>
-                                        <div className="flex flex-col gap-3">
-                                            {d.titles.map(t => (
-                                                <div key={t} className="text-[10px] font-bold text-white/50 hover:text-brand-primary cursor-pointer transition-colors leading-snug">
-                                                    {t}
-                                                </div>
-                                            ))}
-                                        </div>
-                                    </div>
-                                ))}
-                            </motion.div>
-                        )}
-                    </AnimatePresence>
-                )}
+                <AnimatePresence>
+                  {item.name === "Schedule" && showSchedule && (
+                      <motion.div
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 10 }}
+                          className="absolute top-[calc(100%-4px)] left-0 mt-2 w-[800px] bg-[#1a1c23] border border-white/5 shadow-2xl rounded-xl p-8 grid grid-cols-7 gap-6 z-[110]"
+                      >
+                          {releaseSchedule.map((d) => (
+                              <div key={d.day} className="space-y-4 text-center">
+                                  <div className="text-[12px] font-black uppercase text-brand-primary bg-brand-primary/10 py-1.5 rounded-md tracking-widest">{d.day}</div>
+                                  <div className="flex flex-col gap-3">
+                                      {d.titles.map(t => (
+                                          <div key={t} className="text-[10px] font-bold text-white/50 hover:text-brand-primary cursor-pointer transition-colors leading-snug">
+                                              {t}
+                                          </div>
+                                      ))}
+                                  </div>
+                              </div>
+                          ))}
+                      </motion.div>
+                  )}
+                </AnimatePresence>
 
                 {/* Seasons Dropdown */}
-                {item.name === "Seasons" && (
-                    <AnimatePresence>
-                        {showSeasons && (
-                            <motion.div
-                                initial={{ opacity: 0, y: 10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: 10 }}
-                                className="absolute top-[calc(100%-8px)] left-0 mt-4 w-48 bg-[#1a1c23] border border-white/5 shadow-2xl rounded-xl p-4 z-[110]"
-                            >
-                                {seasons.map(s => (
-                                    <Link 
-                                        key={s.id} 
-                                        href={`/seasons?s=${s.id}`}
-                                        className="block px-3 py-2 text-xs font-bold text-white/50 hover:text-brand-primary hover:bg-white/5 rounded-lg transition-all"
-                                        onClick={() => setShowSeasons(false)}
-                                    >
-                                        {s.label}
-                                    </Link>
-                                ))}
-                            </motion.div>
-                        )}
-                    </AnimatePresence>
-                )}
+                <AnimatePresence>
+                  {item.name === "Seasons" && showSeasons && (
+                      <motion.div
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 10 }}
+                          className="absolute top-[calc(100%-4px)] left-0 mt-2 w-48 bg-[#1a1c23] border border-white/5 shadow-2xl rounded-xl p-4 z-[110]"
+                      >
+                          {seasonsList.map(s => (
+                              <Link 
+                                  key={s.id} 
+                                  href={`/seasons?s=${s.id}`}
+                                  className="block px-3 py-2 text-xs font-bold text-white/50 hover:text-brand-primary hover:bg-white/5 rounded-lg transition-all"
+                                  onClick={() => setShowSeasons(false)}
+                              >
+                                  {s.label}
+                              </Link>
+                          ))}
+                      </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             ))}
           </div>
         </div>
 
         <div className="flex items-center gap-6">
-          <div ref={searchContainerRef} className="relative hidden md:block">
+          <div className="relative hidden md:block">
             <form onSubmit={handleSearch} className="relative">
               <input 
                 type="text" 
@@ -235,7 +229,6 @@ export const Navbar = () => {
               </button>
             </form>
 
-            {/* Instant Search Results Dropdown */}
             <AnimatePresence>
               {showInstantSearch && (
                 <motion.div

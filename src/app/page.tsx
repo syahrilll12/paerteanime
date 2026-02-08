@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { AnimeRow } from "@/components/AnimeRow";
+import { AnimeGrid } from "@/components/AnimeGrid";
 import { ScrapedAnimeList } from "@/components/ScrapedAnimeList";
 import { TopChart } from "@/components/TopChart";
 import { GenreGrid } from "@/components/GenreGrid";
@@ -15,13 +16,23 @@ import { ContinueWatching } from "@/components/ContinueWatching";
 import { animeData } from "@/data/anime";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import { Loader2 } from "lucide-react";
 
 export default function Home() {
   const [selectedGenre, setSelectedGenre] = useState<string | null>(null);
+  const [viewMoreContent, setViewMoreContent] = useState<{title: string, data: any[]} | null>(null);
+
+  // Determine if it's an origin filter (Japan/China)
+  const isOriginFilter = selectedGenre && ['japan', 'china'].includes(selectedGenre.toLowerCase());
 
   const filteredData = useMemo(() => {
-    if (!selectedGenre) return animeData;
-    return animeData.filter(a => a.category.toLowerCase().includes(selectedGenre.toLowerCase()));
+    if (!selectedGenre || isOriginFilter) return [];
+    const lowerSelected = selectedGenre.toLowerCase();
+    return animeData.filter(a => a.category.toLowerCase().includes(lowerSelected));
+  }, [selectedGenre, isOriginFilter]);
+
+  useEffect(() => {
+    if (selectedGenre) setViewMoreContent(null);
   }, [selectedGenre]);
 
   return (
@@ -36,7 +47,87 @@ export default function Home() {
         />
         
         <AnimatePresence mode="wait">
-          {!selectedGenre ? (
+          {isOriginFilter ? (
+            <motion.div
+              key="origin-filter-content"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="min-h-[50vh] pt-10 space-y-12"
+            >
+              <div className="container mx-auto px-6">
+                <div className="flex items-center justify-between border-b border-white/5 pb-6">
+                  <h2 className="text-3xl font-display font-black italic uppercase tracking-tighter">
+                    Transmission Node: <span className="text-brand-primary">{selectedGenre}</span>
+                  </h2>
+                  <button 
+                    onClick={() => setSelectedGenre(null)}
+                    className="text-xs font-mono text-white/20 hover:text-white uppercase tracking-widest transition-colors"
+                  >
+                    Reset Link [×]
+                  </button>
+                </div>
+              </div>
+
+              {/* Show Live Data with sub-filters when Japan/China is selected */}
+              <ScrapedAnimeList originFilter={selectedGenre} />
+            </motion.div>
+          ) : selectedGenre ? (
+            <motion.div
+              key="genre-filter-content"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="min-h-[50vh] pt-10"
+            >
+              <div className="container mx-auto px-6 mb-12">
+                <div className="flex items-center justify-between border-b border-white/5 pb-6">
+                  <h2 className="text-3xl font-display font-black italic uppercase tracking-tighter">
+                    Category: <span className="text-brand-primary">{selectedGenre}</span>
+                  </h2>
+                  <button 
+                    onClick={() => setSelectedGenre(null)}
+                    className="text-xs font-mono text-white/20 hover:text-white uppercase tracking-widest transition-colors"
+                  >
+                    Reset Link [×]
+                  </button>
+                </div>
+              </div>
+
+              <div className="container mx-auto px-6">
+                {filteredData.length > 0 ? (
+                  <AnimeGrid title="" data={filteredData} />
+                ) : (
+                  <div className="py-20 text-center">
+                    <p className="text-white/20 font-mono uppercase tracking-[0.3em]">No direct match found in Local Archive.</p>
+                  </div>
+                )}
+              </div>
+            </motion.div>
+          ) : viewMoreContent ? (
+            <motion.div
+              key="view-more-content"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              className="min-h-[60vh] pt-10"
+            >
+               <div className="container mx-auto px-6 mb-12">
+                <div className="flex items-center justify-between border-b border-white/5 pb-6">
+                  <h2 className="text-3xl font-display font-black italic uppercase tracking-tighter text-brand-primary">
+                    {viewMoreContent.title}
+                  </h2>
+                  <button 
+                    onClick={() => setViewMoreContent(null)}
+                    className="flex items-center gap-2 text-xs font-mono text-white/20 hover:text-white uppercase tracking-widest transition-colors"
+                  >
+                    Back to Feed [Esc]
+                  </button>
+                </div>
+              </div>
+              <AnimeGrid title="" data={viewMoreContent.data} />
+            </motion.div>
+          ) : (
             <motion.div
               key="all-content"
               initial={{ opacity: 0 }}
@@ -49,47 +140,29 @@ export default function Home() {
 
               <ScrapedAnimeList />
               
-              <SeasonAnimeRow season="winter-2026" title="Winter 2026 Spotlight" />
+              <SeasonAnimeRow 
+                season="winter-2026" 
+                title="Winter 2026 Spotlight" 
+                onViewMore={(t, d) => setViewMoreContent({title: t, data: d})} 
+              />
               
               <TopChart data={animeData} />
 
-              <RecommendedRow title="Recommended For You" />
+              <RecommendedRow 
+                title="Recommended For You" 
+                onViewMore={(t, d) => setViewMoreContent({title: t, data: d})} 
+              />
 
-              <RecentReleaseRow title="Recently Added Episodes" />
+              <RecentReleaseRow 
+                title="Recently Added Episodes" 
+                onViewMore={(t, d) => setViewMoreContent({title: t, data: d})} 
+              />
 
-              <SeasonAnimeRow season="fall-2025" title="Flashback: Fall 2025" />
-            </motion.div>
-          ) : (
-            <motion.div
-              key="filtered-content"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              className="min-h-[50vh] pt-10"
-            >
-              <div className="container mx-auto px-6 mb-12">
-                <div className="flex items-center justify-between border-b border-white/5 pb-6">
-                  <h2 className="text-3xl font-display font-black italic uppercase tracking-tighter">
-                    Results for <span className="text-brand-primary">{selectedGenre}</span>
-                  </h2>
-                  <button 
-                    onClick={() => setSelectedGenre(null)}
-                    className="text-xs font-mono text-white/20 hover:text-white uppercase tracking-widest transition-colors"
-                  >
-                    Clear Filter [×]
-                  </button>
-                </div>
-              </div>
-
-              {filteredData.length > 0 ? (
-                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 container mx-auto px-6">
-                  <AnimeRow title={`Explore ${selectedGenre}`} data={filteredData} />
-                </div>
-              ) : (
-                <div className="container mx-auto px-6 py-20 text-center">
-                  <p className="text-white/20 font-mono uppercase tracking-[0.3em]">No direct match found in Local DB. Try searching global.</p>
-                </div>
-              )}
+              <SeasonAnimeRow 
+                season="fall-2025" 
+                title="Flashback: Fall 2025" 
+                onViewMore={(t, d) => setViewMoreContent({title: t, data: d})} 
+              />
             </motion.div>
           )}
         </AnimatePresence>
@@ -136,7 +209,7 @@ export default function Home() {
           
           <div className="mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-mono text-white/10 uppercase tracking-widest">
             <p>© 2026 TELANA LABS INTEGRATED. ALL RIGHTS RESERVED.</p>
-            <p>DATA SYNCHRONIZED VIA SAMEHADAKU PROTOCOL</p>
+            <p>DATA SYNCHRONIZED VIA GLOBAL TRANSMISSION NODES</p>
           </div>
         </div>
       </footer>

@@ -4,18 +4,21 @@ import { useEffect, useState } from "react";
 import { AnimeRow } from "./AnimeRow";
 import { Loader2 } from "lucide-react";
 
-export const RecommendedRow = ({ title }: { title: string }) => {
+interface RecommendedRowProps {
+  title: string;
+  onViewMore?: (title: string, data: any[]) => void;
+}
+
+export const RecommendedRow = ({ title, onViewMore }: RecommendedRowProps) => {
   const [data, setData] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // We can fetch from a random season or search for popular terms to get real data
         const res = await fetch(`/api/seasons?season=winter-2026`);
         const json = await res.json();
         if (json.success) {
-          // Sort by rating to make it "Recommended"
           const sorted = json.data.sort((a: any, b: any) => parseFloat(b.rating) - parseFloat(a.rating));
           setData(sorted);
         }
@@ -41,6 +44,6 @@ export const RecommendedRow = ({ title }: { title: string }) => {
   if (data.length === 0) return null;
 
   return (
-    <AnimeRow title={title} data={data} />
+    <AnimeRow title={title} data={data} onViewMore={onViewMore} />
   );
 };

@@ -4,7 +4,13 @@ import { useEffect, useState } from "react";
 import { AnimeRow } from "./AnimeRow";
 import { Loader2 } from "lucide-react";
 
-export const SeasonAnimeRow = ({ season, title }: { season: string; title: string }) => {
+interface SeasonAnimeRowProps {
+  season: string;
+  title: string;
+  onViewMore?: (title: string, data: any[]) => void;
+}
+
+export const SeasonAnimeRow = ({ season, title, onViewMore }: SeasonAnimeRowProps) => {
   const [data, setData] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -38,6 +44,6 @@ export const SeasonAnimeRow = ({ season, title }: { season: string; title: strin
   if (data.length === 0) return null;
 
   return (
-    <AnimeRow title={title} data={data} />
+    <AnimeRow title={title} data={data} onViewMore={onViewMore} />
   );
 };

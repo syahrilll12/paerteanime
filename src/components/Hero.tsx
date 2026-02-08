@@ -106,27 +106,31 @@ export const Hero = () => {
         </AnimatePresence>
       </div>
 
-      {/* Navigation Arrows */}
-      <div className="absolute bottom-10 right-6 flex items-center gap-4 z-20">
+      {/* Navigation Arrows - Centered Style */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-6 z-20 bg-black/20 backdrop-blur-xl px-6 py-3 rounded-full border border-white/5 shadow-2xl">
         <button 
           onClick={handlePrev}
-          className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/10 transition-colors backdrop-blur-md"
+          className="w-8 h-8 rounded-full flex items-center justify-center hover:text-brand-primary transition-colors"
         >
-          <ChevronLeft className="w-6 h-6 text-white" />
+          <ChevronLeft className="w-5 h-5" />
         </button>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
             {featuredList.map((_, i) => (
-                <div 
-                    key={i} 
-                    className={`h-1.5 transition-all duration-500 rounded-full ${currentIndex === i ? 'w-8 bg-brand-primary' : 'w-1.5 bg-white/20'}`} 
+                <button
+                    key={i}
+                    onClick={() => {
+                        setImageLoading(true);
+                        setCurrentIndex(i);
+                    }}
+                    className={`h-1.5 transition-all duration-500 rounded-full ${currentIndex === i ? 'w-8 bg-brand-primary' : 'w-1.5 bg-white/20 hover:bg-white/40'}`} 
                 />
             ))}
         </div>
         <button 
           onClick={handleNext}
-          className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/10 transition-colors backdrop-blur-md"
+          className="w-8 h-8 rounded-full flex items-center justify-center hover:text-brand-primary transition-colors"
         >
-          <ChevronRight className="w-6 h-6 text-white" />
+          <ChevronRight className="w-5 h-5" />
         </button>
       </div>
 

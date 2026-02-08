@@ -1,15 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Sword, Zap, Heart, Ghost, Rocket, Sparkles } from "lucide-react";
+import { Sword, Zap, Heart, Ghost, Rocket, Sparkles, Globe, Map } from "lucide-react";
 
 export const genres = [
   { name: "Action", icon: Sword, color: "from-red-500/20 to-red-600/5", border: "border-red-500/20" },
   { name: "Fantasy", icon: Sparkles, color: "from-brand-primary/20 to-brand-primary/5", border: "border-brand-primary/20" },
   { name: "Sci-Fi", icon: Rocket, color: "from-blue-500/20 to-blue-600/5", border: "border-blue-500/20" },
   { name: "Romance", icon: Heart, color: "from-pink-500/20 to-pink-600/5", border: "border-pink-500/20" },
-  { name: "Horror", icon: Ghost, color: "from-purple-500/20 to-purple-600/5", border: "border-purple-500/20" },
-  { name: "Adventure", icon: Zap, color: "from-yellow-500/20 to-yellow-600/5", border: "border-yellow-500/20" },
+  { name: "Japan", icon: Globe, color: "from-purple-500/20 to-purple-600/5", border: "border-purple-500/20" },
+  { name: "China", icon: Map, color: "from-yellow-500/20 to-yellow-600/5", border: "border-yellow-500/20" },
 ];
 
 interface GenreGridProps {
