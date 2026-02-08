@@ -111,7 +111,6 @@ function TelanaWatchContent() {
     fetchDetails();
   }, [url, titleParam]);
 
-  // Sync History to Cloud
   const syncHistoryToCloud = async (progress: number) => {
     if (!session?.user || !data || !url) return;
     try {
@@ -119,14 +118,13 @@ function TelanaWatchContent() {
         method: "POST",
         body: JSON.stringify({
           animeId: url.split('/').filter(Boolean).slice(-2, -1)[0] || "unknown",
-          episodeId: parseInt(url.split('-episode-')[1]) || 1,
+          episodeId: 1, // Placeholder
           progress,
         }),
       });
     } catch (e) {}
   };
 
-  // Toggle Bookmark
   const toggleBookmark = async () => {
     if (!session?.user || !url) return;
     const animeId = url.split('/').filter(Boolean).slice(-2, -1)[0] || "unknown";
@@ -159,14 +157,10 @@ function TelanaWatchContent() {
     const handleTimeUpdate = () => {
       if (url && video.currentTime > 5) {
         localStorage.setItem(`resume-${url}`, video.currentTime.toString());
-        
-        // Sync to cloud every 30 seconds
         if (video.currentTime - lastSync > 30) {
           syncHistoryToCloud(video.currentTime);
           lastSync = video.currentTime;
         }
-
-        // Auto play next episode detection (10s before end)
         if (video.duration - video.currentTime < 10 && !showNextOverlay) {
           setShowNextOverlay(true);
         }
@@ -183,7 +177,7 @@ function TelanaWatchContent() {
       video.removeEventListener('timeupdate', handleTimeUpdate);
       video.removeEventListener('ended', handleEnded);
     };
-  }, [url, data, showNextOverlay]);
+  }, [url, data, showNextOverlay, session]);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -225,7 +219,6 @@ function TelanaWatchContent() {
 
   const handleNextEpisode = () => {
     if (data?.episodes && data.episodes.length > 0) {
-      // Find current episode index and go to next (since list is reversed, next is index-1)
       const currentIdx = [...data.episodes].reverse().findIndex(ep => ep.url === url);
       if (currentIdx !== -1 && currentIdx < data.episodes.length - 1) {
         const nextEp = [...data.episodes].reverse()[currentIdx + 1];
@@ -244,14 +237,7 @@ function TelanaWatchContent() {
 
   if (loading) return (
     <div className="min-h-screen bg-[#0b0c10] flex flex-col items-center justify-center text-center p-6">
-        <div className="relative w-24 h-24 mb-8">
-            <motion.div animate={{ rotate: 360 }} transition={{ duration: 2, repeat: Infinity, ease: "linear" }} className="absolute inset-0 border-b-2 border-brand-primary rounded-full" />
-            <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-12 h-12 bg-brand-primary/10 rounded-xl flex items-center justify-center">
-                    <Loader2 className="w-6 h-6 text-brand-primary animate-spin" />
-                </div>
-            </div>
-        </div>
+        <Loader2 className="w-12 h-12 text-brand-primary animate-spin mb-4" />
         <h2 className="text-xl font-display font-black italic uppercase tracking-[0.2em] text-white">Initializing Telana Protocol</h2>
     </div>
   );
@@ -280,7 +266,6 @@ function TelanaWatchContent() {
             </div>
           )}
 
-          {/* Next Episode Overlay */}
           <AnimatePresence>
             {showNextOverlay && (
               <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 20 }} className="absolute bottom-16 right-8 z-[50] glass p-6 rounded-2xl border-brand-primary/20 shadow-2xl flex flex-col gap-3 max-w-[200px]">
@@ -288,9 +273,7 @@ function TelanaWatchContent() {
                 <div className="h-1 w-full bg-white/5 rounded-full overflow-hidden">
                   <motion.div initial={{ width: "100%" }} animate={{ width: "0%" }} transition={{ duration: 10, ease: "linear" }} className="h-full bg-brand-primary" />
                 </div>
-                <button onClick={handleNextEpisode} className="flex items-center justify-between w-full px-4 py-2 bg-brand-primary text-background text-[10px] font-black uppercase rounded-lg">
-                  Play Now <FastForward className="w-3 h-3" />
-                </button>
+                <button onClick={handleNextEpisode} className="flex items-center justify-between w-full px-4 py-2 bg-brand-primary text-background text-[10px] font-black uppercase rounded-lg">Play Now <FastForward className="w-3 h-3" /></button>
               </motion.div>
             )}
           </AnimatePresence>
@@ -411,7 +394,7 @@ function TelanaWatchContent() {
         </div>
       </div>
 
-      <div className="w-full lg:w-96 bg-[#0b0c10] border-l border-white/5 p-8 overflow-y-auto hidden lg:block">
+      <div className="w-full lg:w-96 bg-[#0b0c10] border-l border-white/5 p-8 overflow-y-auto hidden lg:block pb-32">
         <h2 className="text-sm font-bold uppercase tracking-[0.2em] mb-8 flex items-center gap-3"><Layers className="w-4 h-4 text-brand-primary" />Up Next</h2>
         <div className="space-y-6">
             {latestEpisodes.map((episode) => (
@@ -436,7 +419,7 @@ export default function WatchPage() {
   return (
     <main className="min-h-screen bg-[#0b0c10]">
       <Navbar />
-      <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><Loader2 className="w-10 h-10 text-brand-primary animate-spin" /></div>}>
+      <Suspense fallback={null}>
         <TelanaWatchContent />
       </Suspense>
     </main>
